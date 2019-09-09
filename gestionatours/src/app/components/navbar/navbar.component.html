@@ -7,12 +7,15 @@
 
     </div>
     <div class="d-flex align-content-start">
-      <a class="nav-item nav-link text-light">(+51) 930 276 300</a>
-      <a class="nav-item nav-link text-light"> info@gestionatours.com</a>
+      <!-- <a class="nav-item nav-link text-light">(+51) 930 276 300</a> -->
+     
+      <li class="nav-item" routerLinkActive="active" *ngIf="user">
+        <p class="nav-link nav-link text-light">{{user.name}}</p>
+      </li>
     </div>
     <div class=" text-light d-flex align-content-end">
-      <a class="nav-item nav-link text-light">Login</a> |
-      <a class="nav-item nav-link text-light">Sign Up</a> |
+      <app-login></app-login>
+      <a class="nav-item nav-link text-light" >Sign Up</a> |
       <a class="nav-item nav-link text-light">EUR</a> |
       <a class="nav-item nav-link text-light">English</a>
     </div>
