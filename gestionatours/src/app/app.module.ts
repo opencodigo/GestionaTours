@@ -18,6 +18,9 @@ import { LoginComponent } from './components/login/login.component';
 
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+import { RegistrarComponent } from './components/registrar/registrar.component';
+import { Registrar2Component } from './components/registrar2/registrar2.component';
+import { Registrar3Component } from './components/registrar3/registrar3.component';
 
 
 let config = new AuthServiceConfig([
@@ -46,7 +49,10 @@ export function provideConfig() {
     TopdestinosComponent,
     TourslocalesComponent,
     ComentariosComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrarComponent,
+    Registrar2Component,
+    Registrar3Component
   ],
   imports: [
     BrowserModule,
