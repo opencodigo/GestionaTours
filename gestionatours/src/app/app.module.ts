@@ -7,8 +7,6 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { ToptoursComponent } from './components/toptours/toptours.component';
-import { TopdestinosComponent } from './components/topdestinos/topdestinos.component';
-import { TourslocalesComponent } from './components/tourslocales/tourslocales.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
@@ -21,6 +19,7 @@ import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-logi
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { Registrar2Component } from './components/registrar2/registrar2.component';
 import { Registrar3Component } from './components/registrar3/registrar3.component';
+import { TourciudadesComponent } from './components/tourciudades/tourciudades.component';
 
 
 let config = new AuthServiceConfig([
@@ -46,13 +45,12 @@ export function provideConfig() {
     FooterComponent,
     BuscarComponent,
     ToptoursComponent,
-    TopdestinosComponent,
-    TourslocalesComponent,
     ComentariosComponent,
     LoginComponent,
     RegistrarComponent,
     Registrar2Component,
-    Registrar3Component
+    Registrar3Component,
+    TourciudadesComponent
   ],
   imports: [
     BrowserModule,
