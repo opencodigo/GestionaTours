@@ -1,0 +1,19 @@
+.testimonial{
+    background-image: url(./../../../assets/img/comentarioM.PNG);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+ }
+ .testimonial2{
+   background-image: url(./../../../assets/img/comentarioL.PNG);
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+ }
+ .testimonial3{
+   background-image: url(./../../../assets/img/comentarioJ.PNG);
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+ }
