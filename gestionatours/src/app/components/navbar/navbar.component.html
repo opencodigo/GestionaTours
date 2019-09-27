@@ -1,21 +1,93 @@
 <nav class="navbar navbar-expand navbar-dark bg-primary">
   <div class="container">
     <div class="nav navbar-nav d-flex align-content-start">
-      <a class="nav-item nav-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a class="nav-item nav-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-      <a class="nav-item nav-link" href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-
+      <a class="nav-item nav-link" href="#"
+        ><i class="fa fa-facebook" aria-hidden="true"></i
+      ></a>
+      <a class="nav-item nav-link" href="#"
+        ><i class="fa fa-instagram" aria-hidden="true"></i
+      ></a>
+      <a class="nav-item nav-link" href="#"
+        ><i class="fa fa-youtube" aria-hidden="true"></i
+      ></a>
     </div>
     <div class="d-flex align-content-start">
       <!-- <a class="nav-item nav-link text-light">(+51) 930 276 300</a> -->
-     
-      <li class="nav-item" routerLinkActive="active" *ngIf="user">
-        <p class="nav-link nav-link text-light">{{user.name}}</p>
-      </li>
     </div>
+
+    <!-- <div class="input-group-prepend">
+      <button
+        class="btn btn-outline-secondary dropdown-toggle"
+        type="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <li href="" class="nav-item" routerLinkActive="active" *ngIf="user">
+          <p class="nav-link nav-link text-light">{{ user.name }}</p>
+        </li>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div role="separator" class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </div> -->
+
+    <!-- <div class="input-group-prepend">
+      <button
+        class="btn btn-outline-secondary dropdown-toggle"
+        type="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        routerLinkActive="active"
+        *ngIf="user"
+      >
+        {{ user.name }}
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div role="separator" class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </div> -->
+
     <div class=" text-light d-flex align-content-end">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button
+            class="btn btn-outline-secondary dropdown-toggle"
+            type="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            routerLinkActive="active"
+            *ngIf="user"
+          >
+            {{ user.name }}
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Mis viajes</a>
+            <a class="dropdown-item" href="#">Mi perfil</a>
+            <a class="dropdown-item" href="#">Notificaciones</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a
+              class="dropdown-item"
+              data-dismiss="modal"
+              (click)="signOut()"
+              href="#"
+              >Cerrar sesion</a
+            >
+          </div>
+        </div>
+      </div>
       <app-login></app-login> |
-      <a class="nav-item nav-link text-light">Sign Up</a> |
+      <a class="nav-item nav-link text-light">SignUp</a> |
       <a class="nav-item nav-link text-light">EUR</a> |
       <a class="nav-item nav-link text-light">English</a>
     </div>
@@ -27,22 +99,40 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#"
+            >Home <span class="sr-only">(current)</span></a
+          >
         </li>
         <li class="nav-item dropdown d-flex align-content-start">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Tours</a>
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Ciudades</a>
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dropdownId"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >TOURS</a
+          >
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="dropdownId"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >DESTINATION</a
+          >
           <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="#">Tours por Ciudades</a>
-            <a class="dropdown-item" href="#">Tours por Actividades</a>
+            <a class="dropdown-item" href="#">Action 1</a>
+            <a class="dropdown-item" href="#">Action 2</a>
           </div>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <i class="fa fa-shopping-basket mr-4 fa-2x" aria-hidden="true"></i>
-        <button class="btn btn-danger my-2 my-sm-0" type="submit">Become Local Expert</button>
+        <button class="btn btn-danger my-2 my-sm-0" type="submit">
+          Become Local Expert
+        </button>
       </form>
     </div>
   </div>
