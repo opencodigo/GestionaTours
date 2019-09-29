@@ -29,53 +29,41 @@ let Busqueda = async(req: Request, ) => {
                             prog_id:element.prog_id
                         }]
                        })
-            })  
-             )
+            }))
+
          //sacando de sus llaves   
          comodin.forEach((comodincito:any)=>{
           dataArray.push(comodincito[0])   
          });
 
          var ProdTurArr:any = [];
+         var ProdTurArr2:any = [];
          //se puede hacer una interfaz de prod_tour { prod_id = , }
-         dataArray.map((prod_tour:any)=>{
-            //console.log('________esto es de parte de PROD TUR________');
-            //console.log(prod_tour.tour_id +'tabiem' + prod_tour.prod_id)
+         let comodin2 = await Promise.all( dataArray.map(async(prod_tour:any)=>{
+         console.log(prod_tour);
             if(prod_tour.prod_id !== 1){
-                //console.log('es un producto ');
-                //console.log(prod_tour)
-              let productos:any = Promise.all(  Producto.findAll({
+              let productito = await Producto.findAll({
                     where:{
                         prod_id:prod_tour.prod_id
                     }
-                }))
-                console.log('___SE busco dentro de productos___')
-                console.log(productos);
-                ProdTurArr.push(productos)
-
-
+                })
+                ProdTurArr.push( productito )
             }else{
-                console.log('es un tour');
-                console.log(prod_tour)
-               let tourcito:any = Promise.all( Tour.findAll({
+                let tourcito = await Tour.findAll({
                     where:{
-                        tour_id:7
+                        tour_id:prod_tour.tour_id
                     }
-                }))
-
-                console.log('___SE busco dentro de Toures___')
-                console.log(tourcito);
+                })
                 ProdTurArr.push(tourcito)
             }
-            
-            
+         })) 
 
+         ProdTurArr.forEach((element:any) => {
+             ProdTurArr2.push(element[0])
+             
          });
 
-         
-         
-         
 
 
-return ProdTurArr
+return ProdTurArr2
 }
