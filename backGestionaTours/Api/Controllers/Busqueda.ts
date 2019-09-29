@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { sequelize, Programacion, Producto, Tour } from './../Config/ConexionSequelize'
+import { sequelize, Programacion, Producto, Tour, Tour_Act, Prod_Act } from './../Config/ConexionSequelize'
 
 
 export let getBusqueda = (req: Request, res: Response)=>{
@@ -45,14 +45,23 @@ let Busqueda = async(req: Request, ) => {
               let productito = await Producto.findAll({
                     where:{
                         prod_id:prod_tour.prod_id
-                    }
+                  
+                    },
+                    include:[{
+                        model:Prod_Act
+                    }]
+                  
                 })
                 ProdTurArr.push( productito )
             }else{
                 let tourcito = await Tour.findAll({
                     where:{
-                        tour_id:prod_tour.tour_id
-                    }
+                        tour_id:prod_tour.tour_id                                                                                                                                                                 
+                    },
+                    include:[{
+                        model:Tour_Act
+                    }]
+                   
                 })
                 ProdTurArr.push(tourcito)
             }
