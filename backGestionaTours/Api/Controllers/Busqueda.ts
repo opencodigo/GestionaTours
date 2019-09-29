@@ -82,10 +82,6 @@ let Busqueda = async(req: Request, ) => {
              ProdTurArr2.push(element[0])
              
          });
-
-
-
-
-
+         
 return ProdTurArr2
 }

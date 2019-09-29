@@ -10,6 +10,7 @@ import { ToptoursComponent } from './components/toptours/toptours.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms'
 
 
 // modulos para inicio de sesion para redes sociales
@@ -20,6 +21,7 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
 import { Registrar2Component } from './components/registrar2/registrar2.component';
 import { Registrar3Component } from './components/registrar3/registrar3.component';
 import { TourciudadesComponent } from './components/tourciudades/tourciudades.component';
+import { HttpClientModule } from '@angular/common/http'
 
 
 let config = new AuthServiceConfig([
@@ -55,7 +57,9 @@ export function provideConfig() {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [{
     provide: AuthServiceConfig,

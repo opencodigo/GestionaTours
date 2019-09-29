@@ -41,37 +41,50 @@
 
   </div>
 
-  <div class="container my-5 busqueda bg-dark py-4">
+<form #busquedaForm="ngForm" (ngSubmit)="Gobusqueda(busquedaForm)">   
+
+   <div class="container my-5 busqueda bg-dark py-4" >
     <div class="row">
       <div class="col-md-3 pl-4">
         <div class="form-group">
-          <fieldset>
+      
             <label class="control-label" for="inputDestino">Destino</label>
-            <input class="form-control" id="inputDestino" type="text" placeholder="Elige un destino...">
-          </fieldset>
+            <input class="form-control" 
+                   id="inputDestino" 
+                   type="text"
+                   name="provID"
+                   #destino="ngModel"
+                   [(ngModel)]="datoBuscar.provID"
+                   placeholder="Elige un destino...">
+          
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <fieldset>
-            <label class="control-label" for="inputCategoria">Categoría</label>
-            <input class="form-control" id="inputCategoria" type="text" placeholder="Elige una categoría...">
-          </fieldset>
-        </div>
-      </div>
+
       <div class="col-md-2">
         <div class="form-group">
-          <fieldset>
+          
             <label class="control-label" for="inputFecha">Fecha inicio</label>
-            <input type="datetime-local" class="form-control" id="inputFecha">
-          </fieldset>
+            <input 
+                  type="date" 
+                  class="form-control"
+                  name="fechin"
+                  #fechin="ngModel"
+                  [(ngModel)]="datoBuscar.fechin" 
+                  id="inputFecha">
+      
         </div>
       </div>
+
       <div class="col-md-2">
         <div class="form-group">
           <fieldset>
             <label class="control-label" for="inputFecha">Fecha fin</label>
-            <input type="datetime-local" class="form-control" id="inputFecha">
+            <input type="date" 
+                    class="form-control"
+                    name="fechfin"
+                    #fechfin="ngModel"
+                    [(ngModel)]="datoBuscar.fechfin" 
+                    id="inputFecha">
           </fieldset>
         </div>
       </div>
@@ -79,12 +92,16 @@
 
 
       <div class="col-md-2">
-        <div class="form-group">
-          <button type="button" class="btn btn-primary">BUSCAR</button>
-        </div>
+        
+          <button type="submit" class="btn btn-primary">BUSCARRRR</button>
+      
       </div>
     </div>
   </div>
+</form>
+
+ 
+
 
 
   <!-- componentes internos -->
