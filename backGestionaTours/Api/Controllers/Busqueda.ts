@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { sequelize, Programacion, Producto, Tour, Tour_Act, Prod_Act } from './../Config/ConexionSequelize'
+import { sequelize, Programacion, Producto, Tour, Tour_Act, Prod_Act, Actividad } from './../Config/ConexionSequelize'
 
 
 export let getBusqueda = (req: Request, res: Response)=>{
@@ -10,8 +10,8 @@ export let getBusqueda = (req: Request, res: Response)=>{
    }
 
 let Busqueda = async(req: Request, ) => {
-        console.log('Esto me cae por el body')
-        console.log(req.body.fechin)
+        //console.log('Esto me cae por el body')
+        //console.log(req.body.fechin)
         let busqueda_front = await sequelize.query(`select prog_id from t_programacion join t_tour_producto on t_programacion.tour_id = t_tour_producto.tour_id
         join t_producto on t_tour_producto.prod_id = t_producto.prod_id where prov_id=${req.body.provID} and prog_fechin >='${req.body.fechin}' and prog_fechfin <= '${req.body.fechfin}' 	
         union select prog_id from t_programacion join t_producto on t_programacion.prod_id = t_producto.prod_id where prov_id = ${req.body.provID}	group by prog_id and 
@@ -39,8 +39,8 @@ let Busqueda = async(req: Request, ) => {
          var ProdTurArr:any = [];
          var ProdTurArr2:any = [];
          //se puede hacer una interfaz de prod_tour { prod_id = , }
-         let comodin2 = await Promise.all( dataArray.map(async(prod_tour:any)=>{
-         console.log(prod_tour);
+         let acondicionamiento = await Promise.all( dataArray.map(async(prod_tour:any)=>{
+         //console.log(prod_tour);
             if(prod_tour.prod_id !== 1){
               let productito = await Producto.findAll({
                     where:{
@@ -48,7 +48,12 @@ let Busqueda = async(req: Request, ) => {
                   
                     },
                     include:[{
-                        model:Prod_Act
+                        attributes:['act_id'],
+                        model:Prod_Act,
+                        include:[{
+                            attributes:['act_descrip'],
+                            model:Actividad
+                        }]
                     }]
                   
                 })
@@ -59,19 +64,26 @@ let Busqueda = async(req: Request, ) => {
                         tour_id:prod_tour.tour_id                                                                                                                                                                 
                     },
                     include:[{
-                        model:Tour_Act
+                        attributes:['act_id'],
+                        model:Tour_Act,
+                        include:[{
+                            attributes:['act_descrip'],
+                            model:Actividad
+                        }]
                     }]
-                    
-                   
                 })
+                
                 ProdTurArr.push(tourcito)
             }
          })) 
 
+         //ordenado datos
          ProdTurArr.forEach((element:any) => {
              ProdTurArr2.push(element[0])
              
          });
+
+
 
 
 
