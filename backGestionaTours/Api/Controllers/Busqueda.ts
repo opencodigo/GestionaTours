@@ -61,6 +61,7 @@ let Busqueda = async(req: Request, ) => {
                     include:[{
                         model:Tour_Act
                     }]
+                    
                    
                 })
                 ProdTurArr.push(tourcito)
