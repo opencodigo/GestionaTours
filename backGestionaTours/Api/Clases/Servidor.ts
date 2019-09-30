@@ -7,6 +7,8 @@ import {sequelize} from './../Config/ConexionSequelize';
 import { Tour_router } from '../Routes/Tour';
 import { BusquedaTotal_Router } from '../Routes/busqueda';
 
+/* Rutas Productos */
+import {Producto_ruta} from '../Routes/ProductoRuta';
 
 
 export class Servidor {
@@ -46,8 +48,8 @@ export class Servidor {
         });
         this.app.use(Tour_router);
         this.app.use(BusquedaTotal_Router);
-     
-         
+     /* Rutas Producto */
+         this.app.use(Producto_ruta);
 
     }
     /* ************************************************************************************* */

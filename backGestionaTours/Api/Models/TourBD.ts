@@ -13,13 +13,9 @@ export let tour_model = (sequelize:any,type:any)=>{
         },
      
         tour_prec:{
-            type:type.DECIMAL(10),
+            type:type.DECIMAL(10,2),
             allowNull:false
         },
-        tour_puntos:{
-            type:type.DECIMAL(10),
-            allowNull:true
-        }
     },{
         tableName:'t_tour',
         timestamps:false
