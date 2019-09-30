@@ -8,8 +8,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { ToptoursComponent } from './components/toptours/toptours.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
-import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
+
+// ROUTES
+
+import { AppRoutingModule } from './app-routing.module';
 
 
 // modulos para inicio de sesion para redes sociales
@@ -20,6 +23,7 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
 import { TourciudadesComponent } from './components/tourciudades/tourciudades.component';
 import { ActividadesComponent } from './components/actividades/actividades.component';
 import { ToursComponent } from './components/tours/tours.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 
 let config = new AuthServiceConfig([
@@ -50,7 +54,8 @@ export function provideConfig() {
     RegistrarComponent,
     TourciudadesComponent,
     ActividadesComponent,
-    ToursComponent
+    ToursComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
