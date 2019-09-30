@@ -1,38 +1,12 @@
 <div class="container-fluid px-5 py-5 ">
   <div class="row">
-    <div class="col-md-3 bg-dark">
-      <div class="form-group">
-        <fieldset>
-          <label class="control-label" for="inputDestino">Destino</label>
-          <input class="form-control" id="inputDestino" type="text" placeholder="Elige un destino...">
-        </fieldset>
-      </div>
-      <div class="form-group">
-        <fieldset>
-          <label class="control-label" for="inputCategoria">Categoría</label>
-          <input class="form-control" id="inputCategoria" type="text" placeholder="Elige una categoría...">
-        </fieldset>
-      </div>
-      <div class="form-group">
-        <fieldset>
-          <label class="control-label" for="inputFecha">Fecha inicio</label>
-          <input type="datetime-local" class="form-control" id="inputFecha">
-        </fieldset>
-      </div>
-      <div class="form-group">
-        <fieldset>
-          <label class="control-label" for="inputFecha">Fecha fin</label>
-          <input type="datetime-local" class="form-control" id="inputFecha">
-        </fieldset>
-      </div>
-      <div class="form-group">
-        <button type="button" class="btn btn-primary">BUSCAR</button>
-      </div>
+    <div class="col-md-3">
+      <app-busquedavertical></app-busquedavertical>
     </div>
     <div class="col-md-9">
-            <app-toptours></app-toptours>
+      <app-toptours></app-toptours>
 
     </div>
-    
   </div>
+
 </div>

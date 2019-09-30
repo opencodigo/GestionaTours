@@ -8,9 +8,9 @@ import { TourComponent } from './components/tour/tour.component';
 import { ProductoComponent } from './components/producto/producto.component';
 
 const APP_ROUTES: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo:'/home', pathMatch: 'full' },
   { path: 'tours', component: ToursComponent },
-  { path: 'tour', component: ProductoComponent },
+  { path: 'tour', component: TourComponent },
 
   { path: '**', component: HomeComponent },
 ];

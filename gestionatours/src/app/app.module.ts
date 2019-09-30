@@ -26,6 +26,7 @@ import { ToursComponent } from './components/tours/tours.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { TourComponent } from './components/tour/tour.component';
 import { ProductoComponent } from './components/producto/producto.component';
+import { BusquedaverticalComponent } from './components/busquedavertical/busquedavertical.component';
 
 
 let config = new AuthServiceConfig([
@@ -59,7 +60,8 @@ export function provideConfig() {
     ToursComponent,
     SliderComponent,
     TourComponent,
-    ProductoComponent
+    ProductoComponent,
+    BusquedaverticalComponent
   ],
   imports: [
     BrowserModule,
