@@ -21,7 +21,12 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
 import { Registrar2Component } from './components/registrar2/registrar2.component';
 import { Registrar3Component } from './components/registrar3/registrar3.component';
 import { TourciudadesComponent } from './components/tourciudades/tourciudades.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { CargaComponent } from './components/carga/carga.component';
+import { NotfoundComponent } from './components/notfound/notfound.component'
+import { RUTAS_APP } from './app.routes';
+import { MinicardsComponent } from './components/minicards/minicards.component';
+import { DestinoComponent } from './components/destino/destino.component';
 
 
 let config = new AuthServiceConfig([
@@ -52,14 +57,19 @@ export function provideConfig() {
     RegistrarComponent,
     Registrar2Component,
     Registrar3Component,
-    TourciudadesComponent
+    TourciudadesComponent,
+    CargaComponent,
+    NotfoundComponent,
+    MinicardsComponent,
+    DestinoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RUTAS_APP
   ],
   providers: [{
     provide: AuthServiceConfig,

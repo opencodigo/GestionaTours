@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatoBusqueda } from 'src/app/modelos/datosBusqueda';
 import { TourService } from 'src/app/services/tour.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-buscar',
@@ -14,24 +15,17 @@ export class BuscarComponent implements OnInit {
     fechfin:'2019-10-05'
   }
 
-  constructor(private _sTours:TourService) { }
+  constructor(private _sTours:TourService , private _sRouter:Router) { }
 
   ngOnInit() {
   }
 
   Gobusqueda({value,valid}:{value:DatoBusqueda,valid:boolean}){
     this.datoBuscar = value;
-    console.log(this.datoBuscar)
-    console.log('olaa busqueda')
-
-    this._sTours.TraerResultados(value).subscribe((data)=>{
-   console.log(' vista de servicio');
-   
-      console.log(data)
-
-
-     })
-
+    // console.log(this.datoBuscar)
+    // console.log('olaa busqueda')
+    this._sTours.pasarelaSet(this.datoBuscar);
+    this._sRouter.navigate(['/encontrados']); 
   }
 
   

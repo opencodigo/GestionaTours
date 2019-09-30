@@ -1,10 +1,10 @@
 import {Router} from 'express';
-import { getTourById } from '../Controllers/tour';
+import { getTourById } from '../Controllers/BusquedaByTour';
 
 
 export let Tour_router = Router();
 
-Tour_router.get('/Tour/:olaTur',getTourById)
+Tour_router.get('/Tour/:tourID',getTourById)
 
 
 

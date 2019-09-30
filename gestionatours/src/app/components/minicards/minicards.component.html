@@ -1,0 +1,16 @@
+
+<div class="card-columns m-1 p-1">
+    <div class="card"  *ngFor="let elemento of listaDeCards"  (click)=verDetalle(elemento) >
+        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title"><a>{{elemento.nombre}}</a><i
+                    class="fas fa-share-alt white-text "></i></h4>
+            <p class="card-text">Actividades: {{elemento.actividades}}</p>
+            <div>
+                <p>Duracio : 2 días y 1 Noche</p>
+                <p>Desde</p>
+                <p>S/. {{elemento.precio}}</p>
+            </div>
+        </div>
+    </div>
+</div>

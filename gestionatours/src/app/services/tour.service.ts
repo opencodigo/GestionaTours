@@ -9,6 +9,12 @@ import { map } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class TourService {
+  tempDato:DatoBusqueda = {
+    provID:0,
+    fechin:'',
+    fechfin:''
+  }
+
 
   constructor(public _sHttp:HttpClient) { }
 TraerResultados(datos:DatoBusqueda):Observable<any>{
@@ -36,7 +42,7 @@ TraerResultados(datos:DatoBusqueda):Observable<any>{
                     id : element.tour_id,
                     nombre:element.tour_nom,
                     precio:element.tour_prec,
-                    actividades:arrayActTour,
+                    actividades:arrayActTour.join(','),
                     tipo:'tour'
                   }
                   //console.log('este mi turcuti')
@@ -52,7 +58,7 @@ TraerResultados(datos:DatoBusqueda):Observable<any>{
                     id : element.prod_id,
                     nombre:element.prod_nom,
                     precio:element.prod_prec,
-                    actividades:arrayActProd,
+                    actividades:arrayActProd.join(','),
                     tipo:'producto'
                   }
                   //console.log('ese es un producto')
@@ -72,6 +78,28 @@ TraerResultados(datos:DatoBusqueda):Observable<any>{
     }))
     
 }
+
+
+busquedaById(id:number,tipo:string){
+  if(tipo === 'tour'){
+    // conectar  post('localhost:3000/busquedaxid/:IDtour')
+}
+else{
+// conectar  post('localhost:3000/busquedaxid/:IDPRodcuto')
+}
+}
+
+
+
+
+pasarelaSet(dato:DatoBusqueda){
+  this.tempDato = dato
+}
+
+pasarelaGet(){
+  return this.tempDato
+}
+
 
 
 }//fin de servcio tour
