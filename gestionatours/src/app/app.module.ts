@@ -8,8 +8,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { ToptoursComponent } from './components/toptours/toptours.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
-import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
+
+// ROUTES
+
+import { AppRoutingModule } from './app-routing.module';
 
 
 // modulos para inicio de sesion para redes sociales
@@ -17,9 +20,12 @@ import { LoginComponent } from './components/login/login.component';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { RegistrarComponent } from './components/registrar/registrar.component';
-import { Registrar2Component } from './components/registrar2/registrar2.component';
-import { Registrar3Component } from './components/registrar3/registrar3.component';
 import { TourciudadesComponent } from './components/tourciudades/tourciudades.component';
+import { ActividadesComponent } from './components/actividades/actividades.component';
+import { ToursComponent } from './components/tours/tours.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { TourComponent } from './components/tour/tour.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 
 let config = new AuthServiceConfig([
@@ -48,9 +54,12 @@ export function provideConfig() {
     ComentariosComponent,
     LoginComponent,
     RegistrarComponent,
-    Registrar2Component,
-    Registrar3Component,
-    TourciudadesComponent
+    TourciudadesComponent,
+    ActividadesComponent,
+    ToursComponent,
+    SliderComponent,
+    TourComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
