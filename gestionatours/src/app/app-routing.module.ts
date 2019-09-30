@@ -11,7 +11,6 @@ const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'tours', component: ToursComponent },
   { path: 'tour', component: ProductoComponent },
-
   { path: '**', component: HomeComponent },
 ];
 

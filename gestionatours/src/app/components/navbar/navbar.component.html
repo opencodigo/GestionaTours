@@ -15,8 +15,7 @@
       <!-- <a class="nav-item nav-link text-light">(+51) 930 276 300</a> -->
     </div>
 
-   
-<!-- menu de links -->
+    <!-- menu de links -->
     <div class=" text-light d-flex align-content-end">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -59,21 +58,25 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span>
+          <a class="nav-link" href="#" routerLink="/home"
+            >INICIO <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item dropdown d-flex align-content-start">
-          <a class="nav-link dropdown-toggle"
+          <a
+            class="nav-link dropdown-toggle"
             href="#"
             id="dropdownId"
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-            >TOURS</a>
+            routerLink="/tours"
+            >TOURS</a
+          >
           <div class="dropdown-menu" aria-labelledby="dropdownId">
-              <a class="dropdown-item" href="#">Tours por Ciudades</a>
-              <a class="dropdown-item" href="#">Tours más comprados</a>
-            </div>
+            <a class="dropdown-item" href="#">Tours por Ciudades</a>
+            <a class="dropdown-item" href="#">Tours más comprados</a>
+          </div>
         </li>
         <li class="nav-item dropdown d-flex align-content-start">
           <a
@@ -86,9 +89,9 @@
             >DESTINOS</a
           >
           <div class="dropdown-menu" aria-labelledby="dropdownId">
-              <a class="dropdown-item" href="#">Colca</a>
-              <a class="dropdown-item" href="#">Arequipa</a>
-            </div>
+            <a class="dropdown-item" href="#">Colca</a>
+            <a class="dropdown-item" href="#">Arequipa</a>
+          </div>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
