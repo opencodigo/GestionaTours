@@ -1,8 +1,10 @@
 import {Request , Response} from 'express';
-import {Producto,Descripcion} from './../Config/ConexionSequelize';
+import {Producto,Descripcion,Itinerario_Producto,Imagen} from './../Config/ConexionSequelize';
 
 const sqlz = require('sequelize');
 const query = sqlz.Op;
+/* Exportamos Multer para subir Archivos o ficheros: */
+var multer = require('multer');
 
 export let RegistrarProducto = (req:Request,res:Response)=>{
     let objProducto = Producto.build(req.body);
@@ -128,4 +130,111 @@ export let EliminarDescripcion = (req:Request,res:Response)=>{
         }
         res.status(501).json(rpta);
     });
+};
+export let AgregarItinirario = (req:Request,res:Response)=>{
+    let {p_prod_id} = req.params;
+    let objItinerario = Itinerario_Producto.build({
+        iti_prod_desc:req.body.iti_prod_desc,
+        prod_id:p_prod_id
+    });
+    objItinerario.save().then((AddItinirario:any)=>{
+        let rpta = {
+            message:'Itinerario Agregado Correctamente',
+            contenido:AddItinirario
+        }
+        res.status(201).json(rpta);
+    }).catch((error:any)=>{
+        let rpta = {
+            message:'Error Itinerario No Agregado',
+            contenido:error
+        }
+        res.status(501).json(rpta);
+    });
+};
+export let ActualizarItinerario = (req:Request,res:Response)=>{
+    let {p_iti_prod_id} = req.params;
+    Itinerario_Producto.update({
+        iti_prod_desc:req.body.iti_prod_desc
+    },{
+        where:{
+            iti_prod_id:p_iti_prod_id
+        }
+    }).then((UpdateItinerario:any)=>{
+        let rpta = {
+            message:'Itinerario Actualizado Correctamente',
+            contenido:UpdateItinerario
+        }
+        res.status(201).json(rpta);
+    }).catch((error:any)=>{
+        let rpta = {
+            message:'Error Itinerario No Actualizado',
+            contenido:error
+        }
+        res.status(501).json(rpta);
+    });
+};
+export let EliminarItinerario = (req:Request,res:Response)=>{
+    let {p_iti_prod_id} = req.params;
+    Itinerario_Producto.destroy({
+        where:{
+            iti_prod_id:p_iti_prod_id
+        }
+    }).then((DeleteItinerario:any)=>{
+        let rpta = {
+            message:'Eliminado Satisfactoriamente',
+            contenido:DeleteItinerario
+        }
+        res.status(201).json(rpta);
+    }).catch((error:any)=>{
+        let rpta = {
+            message:'Error Al Eliminar',
+            contenido:error
+        }
+        res.status(501).json(rpta);
+    });
+};
+export let SubirImagenProducto = (req:any,res:Response)=>{
+    var DIR = './Api/ImgProducto';
+    var storage = multer.diskStorage({
+        destination(req:Request,file:any,cb:any){
+            cb(null,DIR);
+        },
+        filename(req:Request,file:any,cb:any){
+            cb(null,file.originalname);
+        }
+    });
+    var upload = multer({
+        dest:DIR,
+        storage:storage
+    }).single('imgprod');
+    upload(req,res,function(error:any){
+        if(error)
+        {
+            console.log(error);
+            return res.status(422).send('Error Al Subir Tu Imagen');
+        }
+        else{
+            var imgupload = req.file.filename;
+            console.log("Imagen Subida"+imgupload);
+            let objImagenProducto = Imagen.build({img_url:imgupload});
+            console.log(objImagenProducto);
+            objImagenProducto.save().then((saveImage:any)=>{
+                let rpta = {
+                    message:"Creado Correctamente",
+                    img:imgupload,
+                    contenido:saveImage
+                }
+                res.status(201).json(rpta);
+            }).catch((error:any)=>{
+                let rpta = {
+                    message:"Error Al Creado",
+                    contenido:error
+                }
+                res.status(501).json(rpta);
+            });
+        }
+    });
+};
+export let AddImageForProducto = (req:Request,res:Response) =>{
+
 };
