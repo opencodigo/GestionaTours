@@ -1,5 +1,5 @@
 import {Request , Response} from 'express';
-import {Producto,Descripcion,Itinerario_Producto,Imagen} from './../Config/ConexionSequelize';
+import {Producto,Descripcion,Itinerario_Producto,Imagen,Producto_Imagen} from './../Config/ConexionSequelize';
 
 const sqlz = require('sequelize');
 const query = sqlz.Op;
@@ -235,6 +235,31 @@ export let SubirImagenProducto = (req:any,res:Response)=>{
         }
     });
 };
-export let AddImageForProducto = (req:Request,res:Response) =>{
-
+export let ActualizarImagen = ()=>{
+    /** Pendiente */
+};
+export let AddImageForProducto = (req:Request,res:Response)=>{
+    let {p_prod_id} = req.params;
+    let {p_img_id} = req.params;
+    let objProducto_Imagen = Producto_Imagen.build({
+        prod_id:p_prod_id,
+        img_id:p_img_id
+    });
+    objProducto_Imagen.save().then((saveProd_Img:any)=>{
+        let rpta = {
+            message:'Imagen Relacionado Correctamente',
+            contenido:saveProd_Img
+        }
+        res.status(201).json(rpta);
+    }).catch((error:any)=>{
+        let rpta = {
+            message:'Error Imagen No Relacionada',
+            contenido:error
+        }
+        res.status(501).json(rpta);
+    });
+    console.log(objProducto_Imagen);
+};
+export let UpdateImageForProducto = (req:Request,res:Response)=>{
+    /** Pendiente */
 };
