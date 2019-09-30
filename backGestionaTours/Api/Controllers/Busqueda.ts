@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { sequelize, Programacion, Producto, Tour, Tour_Act, Prod_Act, Actividad } from './../Config/ConexionSequelize'
+import { sequelize, Producto, Tour, Tour_Act, Prod_Act, Actividad, Programacion } from './../Config/ConexionSequelize'
 
 
 export let getBusqueda = (req: Request, res: Response)=>{
@@ -24,7 +24,7 @@ let Busqueda = async(req: Request, ) => {
             {
              //sequelize.query(`select tour_id, prod_id from t_programacion where prog_id=${element.prog_id}`)
                         return Programacion.findAll({
-                        attributes: ['tour_id','prod_id'],
+                        attributes: ['tour_id','prod_id','prog_id'],
                         where:[{
                             prog_id:element.prog_id
                         }]
@@ -33,8 +33,10 @@ let Busqueda = async(req: Request, ) => {
 
          //sacando de sus llaves   
          comodin.forEach((comodincito:any)=>{
-          dataArray.push(comodincito[0])   
+         dataArray.push(comodincito[0])   
          });
+   
+         
 
          var ProdTurArr:any = [];
          var ProdTurArr2:any = [];
@@ -45,7 +47,7 @@ let Busqueda = async(req: Request, ) => {
               let productito = await Producto.findAll({
                     where:{
                         prod_id:prod_tour.prod_id
-                  
+                        
                     },
                     include:[{
                         attributes:['act_id'],
@@ -54,12 +56,21 @@ let Busqueda = async(req: Request, ) => {
                             attributes:['act_descrip'],
                             model:Actividad
                         }]
-                    }]
-                  
+                    }],
                 })
-                ProdTurArr.push( productito )
+
+                let productito2={
+                    contenido:productito[0].dataValues,
+                    prog_id:prod_tour.prog_id,
+                    tipo:'producto'
+                }
+
+                
+
+                ProdTurArr.push( productito2 )
             }else{
                 let tourcito = await Tour.findAll({
+                    
                     where:{
                         tour_id:prod_tour.tour_id                                                                                                                                                                 
                     },
@@ -67,21 +78,27 @@ let Busqueda = async(req: Request, ) => {
                         attributes:['act_id'],
                         model:Tour_Act,
                         include:[{
+                            
                             attributes:['act_descrip'],
                             model:Actividad
-                        }]
+                        }
+                     ]
                     }]
+                    
                 })
+
+                let tourcito3={
+                    contenido:tourcito[0].dataValues,
+                    prog_id:prod_tour.prog_id,
+                    tipo:'tour'
+                }
                 
-                ProdTurArr.push(tourcito)
+                ProdTurArr.push(tourcito3 )
             }
          })) 
 
          //ordenado datos
-         ProdTurArr.forEach((element:any) => {
-             ProdTurArr2.push(element[0])
-             
-         });
+    console.log(ProdTurArr)
          
-return ProdTurArr2
+return ProdTurArr
 }

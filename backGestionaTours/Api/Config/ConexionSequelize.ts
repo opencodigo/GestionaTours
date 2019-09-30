@@ -70,6 +70,7 @@ export const Itinerario_Tour = itinerario_tour_model(sequelize,Sequelize);
 export const Itinerario_Producto = itinerario_prod_model(sequelize,Sequelize);
 
 
+
 // ---15 set 2019---agregando descripciones---/
 
 
@@ -137,19 +138,6 @@ Tour_producto.belongsTo(Producto,{foreignKey:'prod_id'});
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Pensaba que se podia trabajr con una soa tabla de descripcion
 /*Itinerario.hasMany(Descripcion,{foreignKey:'iti_id'});
 Descripcion.belongsTo(Itinerario,{foreignKey:'iti_id'});
@@ -182,27 +170,16 @@ Itinerario_Producto.belongsTo(Producto,{foreignKey:'prod_id'})
 Tour.hasMany(Itinerario_Tour,{foreignKey:'tour_id'})
 Itinerario_Tour.belongsTo(Tour,{foreignKey:'tour_id'})
 
+//________alex__descripcion
+Producto.hasMany(Descripcion,{foreignKey:'prod_id'});
+Descripcion.belongsTo(Producto,{foreignKey:'prod_id'});
+/* Descripcion tOUR , Tour */
 
 
 
 
 
 
-
- 
-  
-
-
-
-
-
- 
-
-
-
-
-
-//El tour tambin tiene una provincia
 Provincia.hasMany(Producto,{foreignKey:'prov_id'});
 Producto.belongsTo(Provincia,{foreignKey:'prov_id'});
 

@@ -4,7 +4,7 @@ import { getTourById } from '../Controllers/BusquedaByTour';
 
 export let Tour_router = Router();
 
-Tour_router.get('/Tour/:tourID',getTourById)
+Tour_router.get('/Tour/:tourID/:prog_id',getTourById)
 
 
 

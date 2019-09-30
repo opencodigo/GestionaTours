@@ -14,7 +14,7 @@ export class DestinoComponent implements OnInit {
     this._sActivatedRouter.params.subscribe( parametros =>{
       console.log('___EStos son los parametros___')
       console.log(parametros);
-      let {id,tipo} = parametros
+      let {id,tipo,prog_id} = parametros
       
     })
 
