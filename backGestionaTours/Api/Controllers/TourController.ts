@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import {Tour,DescripcionTour,Itinerario_Tour} from '../Config/ConexionSequelize';
+import {Tour,DescripcionTour,Itinerario_Tour,Tour_producto} from '../Config/ConexionSequelize';
 const sqlz = require('sequelize');
 const query = sqlz.Op;
 
@@ -189,4 +189,30 @@ export let DeleteItinerarioTour = (req:Request,res:Response)=>{
         }
         res.status(501).json(rpta);
     });
+};
+export let TourAddProducto = (req:Request,res:Response)=>{
+    let {p_tour_id} = req.params;
+    let {p_prod_id} = req.params;
+    let objTourProducto = Tour_producto.build({
+        tour_id:p_tour_id,
+        prod_id:p_prod_id
+    });
+    objTourProducto.save().then((saveTourProd:any)=>{
+        let rpta = {
+            message:'Producto Agregado A Tour Correctamente',
+            contenido:saveTourProd
+        }
+        res.status(201).json(rpta);
+    }).catch((error:any)=>{
+        let rpta = {
+            message:'Error Producto No Agregado a Tour',
+            contenido:error
+        }
+        res.status(501).json(rpta);
+    });
+    console.log(objTourProducto);
+};
+export let TourUpdateProducto = (req:Request,res:Response)=>{
+    let {p_tour_id} = req.params;
+    /* Pendiente WA pensar como Solucionar esto :'c */
 };
