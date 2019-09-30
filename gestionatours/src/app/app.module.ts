@@ -24,6 +24,8 @@ import { TourciudadesComponent } from './components/tourciudades/tourciudades.co
 import { ActividadesComponent } from './components/actividades/actividades.component';
 import { ToursComponent } from './components/tours/tours.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { TourComponent } from './components/tour/tour.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 
 let config = new AuthServiceConfig([
@@ -55,7 +57,9 @@ export function provideConfig() {
     TourciudadesComponent,
     ActividadesComponent,
     ToursComponent,
-    SliderComponent
+    SliderComponent,
+    TourComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
