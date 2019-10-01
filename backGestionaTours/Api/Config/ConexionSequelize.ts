@@ -21,7 +21,7 @@ import {  itinerario_prod_model } from '../Models/Itinerario_ProductoBD';
 import { Prod_Act_model } from '../Models/Prod_Atc_BD';
 import { Tour_Actividad_model } from '../Models/Tour_Act_BD';
 import { itinerario_tour_model } from '../Models/itinerario_TourBD';
-
+import { descripcion_tour_model } from '../Models/Tour_DescripcionBD'
 
 
 
@@ -68,6 +68,7 @@ export const Tour_Act = Tour_Actividad_model(sequelize,Sequelize);
 
 export const Itinerario_Tour = itinerario_tour_model(sequelize,Sequelize);
 export const Itinerario_Producto = itinerario_prod_model(sequelize,Sequelize);
+export const DescripcionTour = descripcion_tour_model(sequelize,Sequelize);
 
 
 
@@ -186,7 +187,13 @@ Producto.belongsTo(Provincia,{foreignKey:'prov_id'});
 
 
  
+/* Descripcion , Producto  */
+Producto.hasMany(Descripcion,{foreignKey:'prod_id'});
+Descripcion.belongsTo(Producto,{foreignKey:'prod_id'});
+/* Descripcion tOUR , Tour */
 
+Tour.hasMany(DescripcionTour,{foreignKey:'tour_id'});
+DescripcionTour.belongsTo(Tour,{foreignKey:'tour_id'});
 
 
 
