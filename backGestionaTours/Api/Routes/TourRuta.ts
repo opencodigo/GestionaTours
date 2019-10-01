@@ -29,6 +29,10 @@ export let Tour_Ruta = Router();
 /*  3- */ Tour_Ruta.post('/tourDeleteItinerario/:p_iti_tour_id',Tours.DeleteItinerarioTour);
 /* Relacionar Tour Con Producto */
 Tour_Ruta.post('/tourAndProducto/:p_tour_id/:p_prod_id',Tours.TourAddProducto);
+
+/* Filtros Mysql : */
+
+Tour_Ruta.get('/listTour',Tours.ListadoTourForCity);
  
 
 

@@ -2,23 +2,55 @@ import { Request, Response } from "express";
 import {Tour,DescripcionTour,Itinerario_Tour,Tour_producto} from '../Config/ConexionSequelize';
 const sqlz = require('sequelize');
 const query = sqlz.Op;
+/* Exportamos Multer para subir Archivos o ficheros: */
+var multer = require('multer');
 
-export let RegistrarTour  = (req:Request,res:Response) =>{
-    let objTour = Tour.build(req.body);
-    objTour.save().then((saveTour:any)=>{
-        let rpta = {
-            message:'Regitrado Correctamente',
-            contenido:saveTour
+
+export let RegistrarTour  = (req:any,res:Response) =>{
+    var DIR = './Api/ImgTour';
+    var storage = multer.diskStorage({
+        destination(req:Request,file:any,cb:any){
+            cb(null,DIR);
+        },
+        filename(req:Request,file:any,cb:any){
+            cb(null,file.originalname);
         }
-        res.status(201).json(rpta);
-    }).catch((error:any)=>{
-        let rpta = {
-            message:'Error No Registrado',
-            contenido:error
+    });
+    var upload = multer({
+        dest:DIR,
+        storage:storage
+    }).single('imgTour');
+    upload(req,res,function(error:any){
+        if(error)
+        {
+            console.log(error);
+            return res.status(422).send('Error Al Subir Tu Imagen');
         }
-        res.status(501).json(rpta);
-    })
-    console.log(objTour);
+        else{
+            var imgupload = req.file.filename;
+            console.log("Imagen Subida"+imgupload);
+            let objTour = Tour.build({
+                tour_nom:req.body.tour_nom,
+                tour_prec:req.body.tour_prec,
+                tour_img: imgupload
+            });
+            objTour.save().then((saveTour:any)=>{
+                let rpta = {
+                    message:'Regitrado Correctamente',
+                    img:imgupload,
+                    contenido:saveTour
+                }
+                res.status(201).json(rpta);
+            }).catch((error:any)=>{
+                let rpta = {
+                    message:'Error No Registrado',
+                    contenido:error
+                }
+                res.status(501).json(rpta);
+            })
+            console.log(objTour);
+        }
+    });
 };
 export let ActualizarTour = (req:Request,res:Response)=>{
     let {p_tour_id} = req.params;
@@ -216,3 +248,11 @@ export let TourUpdateProducto = (req:Request,res:Response)=>{
     let {p_tour_id} = req.params;
     /* Pendiente WA pensar como Solucionar esto :'c */
 };
+
+/* AQUI MOSTRAREMOS LOS FILTRO DE LA BASE DE DATOS */
+
+export let ListadoTourForCity = (req:Request,res:Response)=>{
+    Tour.findAll().then((rpta: any) => {
+        res.json(rpta);
+    });
+}
