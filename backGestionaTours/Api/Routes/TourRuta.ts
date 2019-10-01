@@ -27,8 +27,8 @@ export let Tour_Ruta = Router();
 /*  1- */ Tour_Ruta.post('/tourAddItinerario/:p_tour_id',Tours.AddItinerarioTour);
 /*  2- */ Tour_Ruta.put('/tourUpdateItinerario/:p_iti_tour_id',Tours.UpdateItinerarioTour);
 /*  3- */ Tour_Ruta.post('/tourDeleteItinerario/:p_iti_tour_id',Tours.DeleteItinerarioTour);
-
-
+/* Relacionar Tour Con Producto */
+Tour_Ruta.post('/tourAndProducto/:p_tour_id/:p_prod_id',Tours.TourAddProducto);
  
 
 
