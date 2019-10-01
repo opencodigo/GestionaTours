@@ -11,8 +11,8 @@ import { Router } from '@angular/router'
 export class BuscarComponent implements OnInit {
   datoBuscar:DatoBusqueda = {
     provID:0,
-    fechin:'2019-08-01',
-    fechfin:'2019-10-05'
+    fechin:'2019-07-01',
+    fechfin:'2020-01-05'
   }
 
   constructor(private _sTours:TourService , private _sRouter:Router) { }

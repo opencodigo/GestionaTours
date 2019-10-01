@@ -14,7 +14,7 @@ const mis_rutas: Routes = [
         component:CargaComponent
     },
     {
-        path:'destino/:id/:tipo/:prog_id',
+        path:'destino/:tipo/:prog_id',
         component:DestinoComponent
     },
     {

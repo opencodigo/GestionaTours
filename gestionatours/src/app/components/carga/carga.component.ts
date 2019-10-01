@@ -21,8 +21,8 @@ resultados:any[]=[];
     //console.log('Logramos pasar la data mediante un servicio')
     //console.log(this.a_buscar);
     this._sTour.TraerResultados(this.a_buscar).subscribe((rpta)=>{
-      console.log('estos son los resultados desde el carga compo');
-      console.log(rpta)
+      //console.log('estos son los resultados desde el carga compo');
+      //console.log(rpta)
       this.resultados=rpta
     })
     

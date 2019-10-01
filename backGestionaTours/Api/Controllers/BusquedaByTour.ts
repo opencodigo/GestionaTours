@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Programacion, Itinerario_Tour, Tour_Act, Tour, Actividad, Tour_producto, Producto, Provincia, Departamento } from "../Config/ConexionSequelize";
+import { Programacion, Itinerario_Tour, Tour_Act, Tour, Actividad, Tour_producto, Producto, Provincia, Departamento, DescripcionTour } from "../Config/ConexionSequelize";
 
 
 export let getTourById = (req: Request, res: Response) => {
@@ -13,14 +13,14 @@ export let getTourById = (req: Request, res: Response) => {
 
 let BusquedaTur = async(req:Request)=>{
     let prog_id = req.params.prog_id;
-    let tur_id =  req.params.tourID;
+    //let tur_id =  req.params.tourID;
 
     console.log('parametros');
     console.log(prog_id);
-    console.log(tur_id);
+    //console.log(tur_id);
     let Tourr = await  Programacion.findAll({
     
-        attributes:['prog_fechin','prog_fechfin','prog_prec','prog_cap','tour_id'],
+        attributes:['prog_fechin','prog_fechfin','prog_prec','prog_cap','tour_id','prog_dura'],
         where:{ prog_id:prog_id },
         include:[{
             attributes:['tour_nom'],
@@ -43,6 +43,9 @@ let BusquedaTur = async(req:Request)=>{
                         }]
                     }]
                 }]
+            },{
+                attributes:['descripcion'],
+                model:DescripcionTour
             }]
            
         }]
