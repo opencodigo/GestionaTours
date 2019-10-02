@@ -27,6 +27,9 @@ import { SliderComponent } from './components/slider/slider.component';
 import { TourComponent } from './components/tour/tour.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { BusquedaverticalComponent } from './components/busquedavertical/busquedavertical.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 
 let config = new AuthServiceConfig([
@@ -61,12 +64,15 @@ export function provideConfig() {
     SliderComponent,
     TourComponent,
     ProductoComponent,
-    BusquedaverticalComponent
+    BusquedaverticalComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [{
     provide: AuthServiceConfig,

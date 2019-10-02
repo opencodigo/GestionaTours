@@ -24,7 +24,7 @@ let Busqueda = async(req: Request, ) => {
             {
              //sequelize.query(`select tour_id, prod_id from t_programacion where prog_id=${element.prog_id}`)
                         return Programacion.findAll({
-                        attributes: ['tour_id','prod_id','prog_id'],
+                        attributes: ['tour_id','prod_id','prog_id','prog_dura'],
                         where:[{
                             prog_id:element.prog_id
                         }]
@@ -62,6 +62,8 @@ let Busqueda = async(req: Request, ) => {
                 let productito2={
                     contenido:productito[0].dataValues,
                     prog_id:prod_tour.prog_id,
+                    prog_dura:prod_tour.prog_dura,
+                    
                     tipo:'producto'
                 }
 
@@ -90,6 +92,7 @@ let Busqueda = async(req: Request, ) => {
                 let tourcito3={
                     contenido:tourcito[0].dataValues,
                     prog_id:prod_tour.prog_id,
+                    prog_dura:prod_tour.prog_dura,
                     tipo:'tour'
                 }
                 

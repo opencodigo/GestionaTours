@@ -1,5 +1,6 @@
 import { Router} from 'express'
-import { getTourByProvincia} from '../Controllers/BusquedaPorProvincia'
+
+import { getOnlyProvincia } from '../Controllers/TraerProvincias';
 
 export let Provin_Router = Router();
-Provin_Router.get('/turism_by_prov/:prov',getTourByProvincia)
+Provin_Router.get('/provincia',getOnlyProvincia) 

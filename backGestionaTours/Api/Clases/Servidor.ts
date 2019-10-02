@@ -8,6 +8,7 @@ import {sequelize} from './../Config/ConexionSequelize';
 import { BusquedaTotal_Router } from '../Routes/busqueda';
 import { Tour_router } from '../Routes/Tour';
 import { Producto_router } from '../Routes/Producto';
+import { Provin_Router } from '../Routes/provincia';
 
 
 
@@ -49,6 +50,7 @@ export class Servidor {
         this.app.use(Tour_router);
         this.app.use(BusquedaTotal_Router);
         this.app.use(Producto_router);
+        this.app.use(Provin_Router)
 
      
          
