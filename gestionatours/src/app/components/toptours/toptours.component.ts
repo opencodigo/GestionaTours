@@ -28,10 +28,8 @@ export class ToptoursComponent implements OnInit {
      let prodID = elemento.id
        let tipo = elemento.tipo
        let prog_id = elemento.prog_id
-     //console.log('es un producto')
-     //console.log(elemento.prog_id)
- 
-     this._sRouter.navigate(["/tour",tipo,prog_id])
+
+       this._sRouter.navigate(["/tour",tipo,prog_id])
     }}
 
 }

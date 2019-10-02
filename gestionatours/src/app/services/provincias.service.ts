@@ -8,6 +8,7 @@ export class ProvinciasService {
   provincias
 
   constructor(private _sHttp:HttpClient) { }
+  
   traerProvincias(){
     return new Promise((resolve,reject)=>{
       if(this.provincias){
@@ -25,5 +26,6 @@ export class ProvinciasService {
     
       
     }
+
     
 }

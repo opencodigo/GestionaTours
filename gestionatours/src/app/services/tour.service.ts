@@ -34,8 +34,7 @@ TraerResultados(datos:DatoBusqueda):Observable<any>{
 
       let viajes = resultado.map(element => {
 
-        console.log('___ola___')
-        console.log(element)
+      
            let oli:any
            let arrayActTour:any[]=[];
            let arrayActProd:any[]=[];
@@ -64,8 +63,8 @@ TraerResultados(datos:DatoBusqueda):Observable<any>{
                     prog_id:element.prog_id,
                     prog_dura:element.prog_dura
                   }
-                  console.log('este mi proddd')
-                  console.log(oli)
+                 //7 console.log('este mi proddd')
+                  //console.log(oli)
                  // todos.push(tour);
                 }
             
@@ -126,13 +125,13 @@ busquedaById(tipo:string,prog_id:number):Observable<any>{
           
 
           let Tur = {
-            lugares:ArrDep,
+            lugares:ArrDep.join(','),
             duracion:rpta.prog_dura,
             capacidad:rpta.prog_cap,
             titulo:rpta.t_tour.tour_nom,
-            descripciones:ArrDesc,
-            actividades:ArrAct,
-            itinerario:ArrIti,
+            descripciones:ArrDesc.join(','),
+            actividades:ArrAct.join(','),
+            itinerario:ArrIti.join(','),
             fechin:rpta.prog_fechin,
             fechfin:rpta.prog_fechfin,
             precio:rpta.prog_prec,
@@ -159,11 +158,11 @@ else if (tipo === 'producto'){
   misHeadres.append('Content-type','application/json');
   return this._sHttp.get(`http://localhost:3000/Producto/${prog_id}` ,{headers:misHeadres}).pipe(
     map((resultado:any)=>{
-      console.log('primer mapeo del dia! ')
-      console.log(resultado);
+      //console.log('primer mapeo del dia! ')
+      //console.log(resultado);
       let datosProducto = resultado.map((rpta)=>{
 
-        console.log(' accediendo a dep');
+       // console.log(' accediendo a dep');
         
         //console.log(rpta.t_producto.t_itinerario_productos)
         let product:any
@@ -195,15 +194,15 @@ else if (tipo === 'producto'){
           duracion:rpta.prog_dura,
           capacidad:rpta.prog_cap,
           titulo:rpta.t_producto.prod_nom,
-          descripciones:ArrDesc,
-          actividades:ArrAct,
-          itinerario:ArrIti,
+          descripciones:ArrDesc.join(','),
+          actividades:ArrAct.join(','),
+          itinerario:ArrIti.join(','),
           fechin:rpta.prog_fechin,
           fechfin:rpta.prog_fechfin,
           precio:rpta.prog_prec,
           tipo:'Producto'
         }
-        console.log(product);
+        //console.log(product);
         
 
         return product;

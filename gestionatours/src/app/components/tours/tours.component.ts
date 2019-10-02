@@ -15,20 +15,30 @@ export class ToursComponent implements OnInit {
   }
 
   resultados:any[]=[];
-  constructor(private _sTour:TourService) { }
+  constructor(private _sTour:TourService) { 
+
+    console.log('hola desde en contrctor')
+  }
 
   ngOnInit() {
+  console.log('hoolaa en el initt')
+
     this.a_buscar = this._sTour.pasarelaGet()
     //console.log('Logramos pasar la data mediante un servicio')
     //console.log(this.a_buscar);
     this._sTour.TraerResultados(this.a_buscar).subscribe((rpta)=>{
-      console.log('estos son los resultados desde el carga compo');
+      //la consulta principal se realia aqui mismo con datos traidos por un servicio 
+      console.log('del Tours compoent init');
+      
       console.log(rpta)
       this.resultados=rpta
     })
+
     
   }
 
-  
+
+      
+      
 
 }

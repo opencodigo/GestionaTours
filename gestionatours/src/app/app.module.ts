@@ -29,6 +29,7 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { BusquedaverticalComponent } from './components/busquedavertical/busquedavertical.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ToursxdepComponent } from './components/toursxdep/toursxdep.component';
 
 
 
@@ -65,6 +66,7 @@ export function provideConfig() {
     TourComponent,
     ProductoComponent,
     BusquedaverticalComponent,
+    ToursxdepComponent,
     
   ],
   imports: [
