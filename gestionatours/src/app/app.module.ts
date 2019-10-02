@@ -28,6 +28,8 @@ import { TourComponent } from './components/tour/tour.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { BusquedaverticalComponent } from './components/busquedavertical/busquedavertical.component';
 import { PagarproductoComponent } from './components/pagarproducto/pagarproducto.component';
+import { AdminComponent } from './administrador/components/admin/admin.component';
+import { HomeAdminComponent } from './administrador/components/home-admin/home-admin.component';
 
 
 let config = new AuthServiceConfig([
@@ -63,7 +65,9 @@ export function provideConfig() {
     TourComponent,
     ProductoComponent,
     BusquedaverticalComponent,
-    PagarproductoComponent
+    PagarproductoComponent,
+    AdminComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,
