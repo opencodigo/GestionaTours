@@ -1,0 +1,307 @@
+<div class="container toptours mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          SELECCIONA EL MEDIO DE PAGO
+        </div>
+
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Tarjetas crédito o débito
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseOne"
+              class="collapse show"
+              aria-labelledby="headingOne"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body">
+                <div class=" mb-3">
+                  <img
+                    alt="Visa - Mastercard - American Express - Diners"
+                    src="https://turismoi.pe/assets/tarjetas/tarjetas-5288a27a9f9ee1054162707b022d409f.png"
+                    title="Visa - Mastercard - American Express - Diners"
+                    width="209"
+                    class="loading"
+                    data-was-processed="true"
+                  />
+                </div>
+                <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom01"
+                        placeholder="Número de Tarjeta  "
+                        value=""
+                        required
+                      />
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom02"
+                        placeholder="Correo Electronico"
+                        value=""
+                        required
+                      />
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+                  <p>Vencimiento</p>
+
+                  <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                      <select id="card[exp_month]" class="form-control input-lg"
+                        ><option value="">Mes</option
+                        ><option value="01">01 - Enero</option
+                        ><option value="02">02 - Febrero</option
+                        ><option value="03">03 - Marzo</option
+                        ><option value="04">04 - Abril</option
+                        ><option value="05">05 - Mayo</option
+                        ><option value="06">06 - Junio</option
+                        ><option value="07">07 - Julio</option
+                        ><option value="08">08 - Agosto</option
+                        ><option value="09">09 - Setiembre</option
+                        ><option value="10">10 - Octubre</option
+                        ><option value="11">11 - Noviembre</option
+                        ><option value="12">12 - Diciembre</option></select
+                      >
+                      <div class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <select id="card[exp_year]" class="form-control"
+                        ><option value="">Año</option
+                        ><option value="2019">2019</option
+                        ><option value="2020">2020</option
+                        ><option value="2021">2021</option
+                        ><option value="2022">2022</option
+                        ><option value="2023">2023</option
+                        ><option value="2024">2024</option
+                        ><option value="2025">2025</option
+                        ><option value="2026">2026</option
+                        ><option value="2027">2027</option
+                        ><option value="2028">2028</option
+                        ><option value="2029">2029</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please provide a valid state.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom01"
+                        placeholder="CVV"
+                        value=""
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class=" text-center">
+                    <a href="#" class="btn btn-danger text-center"
+                      >PROCEDER A PAGAR</a
+                    >
+                  </div>
+                </form>
+
+                <script>
+                  // Example starter JavaScript for disabling form submissions if there are invalid fields
+                  (function() {
+                    "use strict";
+                    window.addEventListener(
+                      "load",
+                      function() {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName(
+                          "needs-validation"
+                        );
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(
+                          forms,
+                          function(form) {
+                            form.addEventListener(
+                              "submit",
+                              function(event) {
+                                if (form.checkValidity() === false) {
+                                  event.preventDefault();
+                                  event.stopPropagation();
+                                }
+                                form.classList.add("was-validated");
+                              },
+                              false
+                            );
+                          }
+                        );
+                      },
+                      false
+                    );
+                  })();
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Banco, banca online o agentes
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseTwo"
+              class="collapse"
+              aria-labelledby="headingTwo"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body mb-3">
+                <div class="form-group">
+                  <img
+                    alt="Pe-opcion2"
+                    src="https://turismoi.pe/assets/pe-opcion2-13fae82210509c1fbe85444e43f4a02a.png"
+                    width="76"
+                    class="loading"
+                    data-was-processed="true"
+                  />
+                  <img
+                    alt="Pe-opcion1"
+                    src="https://turismoi.pe/assets/pe-opcion1-aff5c3bcf2a9aa22e9085a1b91f86a3b.png"
+                    width="76"
+                    class="loading"
+                    data-was-processed="true"
+                  />
+                </div>
+                Paga a través de tu banca por internet en BBVA, BCP, INTERBANK,
+                SCOTIABANK y BANBIF. Debítalo de tu cuenta o cárgalo a tu
+                tarjeta de crédito asociada. Para pagar en Agente, acércate a
+                cualquier punto del BBVA, BCP, INTERBANK, SCOTIABANK y BANBIF.
+                Agentes corresponsales KASNET, WESTER UNION – Pago de Servicios
+                y FULLCARGA.
+              </div>
+              <div class=" text-center mb-3">
+                <a href="#" class="btn btn-danger text-center"
+                  >PROCEDER A PAGAR</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Pagar con PayPal o Tarjeta de Crédito o Débito
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseThree"
+              class="collapse"
+              aria-labelledby="headingThree"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body">
+                <div>
+                  <img
+                    alt="PayPal Turismoi.pe"
+                    src="https://turismoi.pe/assets/xl-paypal-3bc0ba3bd758834e0e668b53884d2791.png"
+                    class="loading"
+                    data-was-processed="true"
+                  />
+                </div>
+                Puedes pagar desde tu cuenta PayPal o con cualquiera de las
+                siguientes tarjetas sin necesidad de tener una cuenta PayPal:
+                <ul>
+                  <li>MasterCard</li>
+                  <li>Discover</li>
+                  <li>Visa</li>
+                  <li>Maestro</li>
+                  <li>UnionPay</li>
+                  <li>Tarjeta Aurora</li>
+                  <li>American Express</li>
+                </ul>
+                <div>
+                  <div>
+                    Se te cobrará en USD (Dólares). Si tu tarjeta no acepta
+                    dólares, tu banco hará una conversión de divisa a la moneda
+                    de tu tarjeta. podría haber una pequeña diferencia por el
+                    tipo de cambio.
+                  </div>
+                  <div>
+                    <div class=" text-center mt-3">
+                      <a href="#" class="btn btn-danger text-center"
+                        >PROCEDER A PAGAR</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- formulario 2-->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header text-center">
+          Autentica Reserva Nacional Pacaya Samiria
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Fecha de partida</h5>
+          <label for="">07/10/2019</label>
+          <p></p>
+          <div class="row display">
+            <div class="col"><h3 class="text-primary bold">Total:</h3></div>
+            <div class="col right"><h3>S/.</h3></div>
+            <div class="col right"><h3 for="">999</h3></div>
+          </div>
+          <p>Monto referencial en dólares:</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

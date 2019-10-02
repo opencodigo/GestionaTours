@@ -55,11 +55,11 @@
 </nav>
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand mr-5" href="#">GESTIONA-TOURS</a>
+    <a class="navbar-brand mr-5" [routerLink]="['/home']">GESTIONA-TOURS</a>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span>
+          <a class="nav-link" [routerLink]="['/home']">INICIO <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item dropdown d-flex align-content-start">
@@ -68,26 +68,27 @@
             id="dropdownId"
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-expanded="false"
-            >TOURS</a>
+            aria-expanded="false">TOURS</a>
           <div class="dropdown-menu" aria-labelledby="dropdownId">
-              <a class="dropdown-item" href="#">Tours por Ciudades</a>
-              <a class="dropdown-item" href="#">Tours más comprados</a>
+<<<<<<< HEAD
+            
+              <a class="dropdown-item"  (click)='TourxDep()' >Tours por Departamento</a>
+=======
+              <a class="dropdown-item" [routerLink]="['/tours']">Tours por Ciudades</a>
+>>>>>>> master
+              <a class="dropdown-item" [routerLink]="['/tours']">Tours más comprados</a>
             </div>
         </li>
         <li class="nav-item dropdown d-flex align-content-start">
-          <a
-            class="nav-link dropdown-toggle"
+          <a class="nav-link dropdown-toggle"
             href="#"
             id="dropdownId"
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-expanded="false"
-            >DESTINOS</a
-          >
+            aria-expanded="false">DESTINOS</a>
           <div class="dropdown-menu" aria-labelledby="dropdownId">
-              <a class="dropdown-item" href="#">Colca</a>
-              <a class="dropdown-item" href="#">Arequipa</a>
+              <a class="dropdown-item" [routerLink]="['/tours']">Colca</a>
+              <a class="dropdown-item" [routerLink]="['/tours']">Arequipa</a>
             </div>
         </li>
       </ul>

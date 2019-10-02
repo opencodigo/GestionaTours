@@ -15,17 +15,35 @@ import { reserva_model } from '../Models/ReservaBD';
 import { factura_model } from '../Models/FacturaBD';
 import { Tour_Producto_model } from '../Models/Tour_ProductoBD';
 import { tipoUsuario_model } from '../Models/TipoUsuarioBD';
+
+import { descripcion_model } from '../Models/DescripcionBD';
+
 import { descripcion_model } from '../Models/Descripcion_ProductoBD';
+
+import { descripcion_model } from '../Models/DescripcionBD';
+
+import { descripcion_model } from '../Models/Descripcion_ProductoBD';
+
 import { actividad_model } from '../Models/ActividadesBD';
 import {  itinerario_prod_model } from '../Models/Itinerario_ProductoBD';
 import { Prod_Act_model } from '../Models/Prod_Atc_BD';
 import { Tour_Actividad_model } from '../Models/Tour_Act_BD';
 import { itinerario_tour_model } from '../Models/itinerario_TourBD';
 
+import { descripcion_tour_model } from '../Models/Tour_DescripcionBD'
+
+import { descripcion_tour_model } from '../Models/Tour_DescripcionBD'
+
 import {descripcion_tour_model} from '../Models/Tour_DescripcionBD';
 
+export const sequelize = new Sequelize('bd_gestiontours', 'root', 'root', {
+
+export const sequelize = new Sequelize('bd_gestiontours', 'root', '', {
+
+export const sequelize = new Sequelize('bd_gestiontours', 'root', '', {
 
 export const sequelize = new Sequelize('bd_gestiontours', 'root', 'root', {
+
     host: 'localhost',
     dialect: 'mysql',
     logging: console.log,
@@ -70,13 +88,13 @@ export const Itinerario_Producto = itinerario_prod_model(sequelize,Sequelize);
 
 export const DescripcionTour = descripcion_tour_model(sequelize,Sequelize);
 
+export const DescripcionTour = descripcion_tour_model(sequelize,Sequelize);
+
+export const DescripcionTour = descripcion_tour_model(sequelize,Sequelize);
 
 // ---15 set 2019---agregando descripciones---/
 
-
 //--17 set 2019 -------------------------------------------/
-
-
 
 /* Relacionamiento de Tablas */
 
@@ -135,6 +153,19 @@ Tour_producto.belongsTo(Producto,{foreignKey:'prod_id'});
 
 //----------------------------14 set 2019----------------------------//
 
+//Pensaba que se podia trabajr con una soa tabla de descripcion
+/*Itinerario.hasMany(Descripcion,{foreignKey:'iti_id'});
+Descripcion.belongsTo(Itinerario,{foreignKey:'iti_id'});
+
+Incluye.hasMany(Descripcion,{foreignKey:'incluye_id'});
+Descripcion.belongsTo(Incluye,{foreignKey:'incluye_id'});
+
+NoIncluye.hasMany(Descripcion,{foreignKey:'noIncluye_id'});
+Descripcion.belongsTo(NoIncluye,{foreignKey:'noIncluye_id'});
+
+Notas.hasMany(Descripcion,{foreignKey:'notas_id'});
+Descripcion.belongsTo(Notas,{foreignKey:'notas_id'});*/
+
 Tour.hasMany(Tour_Act,{foreignKey:'tour_id'})
 Tour_Act.belongsTo(Tour,{foreignKey:'tour_id'})
 
@@ -157,6 +188,26 @@ Itinerario_Tour.belongsTo(Tour,{foreignKey:'tour_id'});
 Provincia.hasMany(Producto,{foreignKey:'prov_id'});
 Producto.belongsTo(Provincia,{foreignKey:'prov_id'});
 
+Tour.hasMany(Itinerario_Tour,{foreignKey:'tour_id'})
+Itinerario_Tour.belongsTo(Tour,{foreignKey:'tour_id'})
+
+//________alex__descripcion
+Producto.hasMany(Descripcion,{foreignKey:'prod_id'});
+Descripcion.belongsTo(Producto,{foreignKey:'prod_id'});
+/* Descripcion tOUR , Tour */
+
+Provincia.hasMany(Producto,{foreignKey:'prov_id'});
+Producto.belongsTo(Provincia,{foreignKey:'prov_id'});
+
+Provincia.hasMany(Producto,{foreignKey:'prov_id'});
+Producto.belongsTo(Provincia,{foreignKey:'prov_id'});
+
+Tour.hasMany(Itinerario_Tour,{foreignKey:'tour_id'});
+Itinerario_Tour.belongsTo(Tour,{foreignKey:'tour_id'});
+//El tour tambin tiene una provincia
+Provincia.hasMany(Producto,{foreignKey:'prov_id'});
+Producto.belongsTo(Provincia,{foreignKey:'prov_id'});
+
 /* Descripcion , Producto  */
 Producto.hasMany(Descripcion,{foreignKey:'prod_id'});
 Descripcion.belongsTo(Producto,{foreignKey:'prod_id'});
@@ -164,11 +215,6 @@ Descripcion.belongsTo(Producto,{foreignKey:'prod_id'});
 
 Tour.hasMany(DescripcionTour,{foreignKey:'tour_id'});
 DescripcionTour.belongsTo(Tour,{foreignKey:'tour_id'});
-
-
- 
-
-
 
 
 

@@ -18,3 +18,18 @@ export let Producto_ruta = Router();
 /* 1- */ Producto_ruta.post('/productoDescripcion/:p_prod_id',Product.AgregarDescripcion);
 /* 2- */ Producto_ruta.put('/ProductoDescripcionUpdate/:p_desc_prod_id',Product.ActualizarDescripcion);
 /* 3- */ Producto_ruta.post('/productoDescripcionDelete/:p_desc_prod_id',Product.EliminarDescripcion);
+/* Crud de Itinirarios Producto:
+    1- Agregrar Itinerario:
+    2- Actualizar Itinerario:
+    3- Eliminar Itinerario
+*/
+/* 1- */ Producto_ruta.post('/ProductoItinerario/:p_prod_id',Product.AgregarItinirario);
+/* 2- */ Producto_ruta.put('/ProductoUpdateItinerario/:p_iti_prod_id',Product.ActualizarItinerario);
+/* 3- */ Producto_ruta.post('/ProductoItinerarioDelete/:p_iti_prod_id',Product.EliminarItinerario);
+/* Agregar Imagen Producto 
+    1- Add Imagen Producto.
+    2- Releacionar Producto Con Imagen.
+*/
+/* 1- */ Producto_ruta.post('/ProductoImagen',Product.SubirImagenProducto);
+/* 2- */ Producto_ruta.post('/ProductoRelacionado/:p_prod_id/:p_img_id',Product.AddImageForProducto);
+

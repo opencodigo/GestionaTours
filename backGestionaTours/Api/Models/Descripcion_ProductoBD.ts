@@ -16,4 +16,12 @@ export let descripcion_model =  (sequelize:any,type:any)=>{
         timestamps:false
     });
     return Descripcion;
+
 }  
+
+}  
+
+}  
+
+}  
+
