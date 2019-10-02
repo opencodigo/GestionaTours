@@ -27,10 +27,17 @@ import { SliderComponent } from './components/slider/slider.component';
 import { TourComponent } from './components/tour/tour.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { BusquedaverticalComponent } from './components/busquedavertical/busquedavertical.component';
+<<<<<<< HEAD
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ToursxdepComponent } from './components/toursxdep/toursxdep.component';
+
+=======
 import { PagarproductoComponent } from './components/pagarproducto/pagarproducto.component';
 import { AdminComponent } from './administrador/components/admin/admin.component';
 import { HomeAdminComponent } from './administrador/components/home-admin/home-admin.component';
 import { FacturaComponent } from './components/factura/factura.component';
+>>>>>>> master
 
 
 let config = new AuthServiceConfig([
@@ -66,15 +73,22 @@ export function provideConfig() {
     TourComponent,
     ProductoComponent,
     BusquedaverticalComponent,
+<<<<<<< HEAD
+    ToursxdepComponent,
+    
+=======
     PagarproductoComponent,
     AdminComponent,
     HomeAdminComponent,
     FacturaComponent
+>>>>>>> master
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [{
     provide: AuthServiceConfig,

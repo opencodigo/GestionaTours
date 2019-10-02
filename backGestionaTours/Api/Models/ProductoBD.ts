@@ -12,19 +12,17 @@ export let producto_model = (sequelize:any,type:any)=>{
         },
     
         prod_prec:{
-<<<<<<< Updated upstream
+
             type:type.DECIMAL(10,2),
-=======
-<<<<<<< HEAD
+
             type:type.DECIMAL,
             allowNull:true
         },
         prod_puntos:{
             type:type.DECIMAL(10),
-=======
+
             type:type.DECIMAL(10,2),
->>>>>>> master
->>>>>>> Stashed changes
+
             allowNull:true
         }   
     },{
