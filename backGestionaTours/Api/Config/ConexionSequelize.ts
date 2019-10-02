@@ -15,17 +15,42 @@ import { reserva_model } from '../Models/ReservaBD';
 import { factura_model } from '../Models/FacturaBD';
 import { Tour_Producto_model } from '../Models/Tour_ProductoBD';
 import { tipoUsuario_model } from '../Models/TipoUsuarioBD';
+<<<<<<< Updated upstream
 import { descripcion_model } from '../Models/Descripcion_ProductoBD';
+=======
+<<<<<<< HEAD
+import { descripcion_model } from '../Models/DescripcionBD';
+=======
+import { descripcion_model } from '../Models/Descripcion_ProductoBD';
+>>>>>>> master
+>>>>>>> Stashed changes
 import { actividad_model } from '../Models/ActividadesBD';
 import {  itinerario_prod_model } from '../Models/Itinerario_ProductoBD';
 import { Prod_Act_model } from '../Models/Prod_Atc_BD';
 import { Tour_Actividad_model } from '../Models/Tour_Act_BD';
 import { itinerario_tour_model } from '../Models/itinerario_TourBD';
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+import { descripcion_tour_model } from '../Models/Tour_DescripcionBD'
+>>>>>>> Stashed changes
+
+import {descripcion_tour_model} from '../Models/Tour_DescripcionBD';
+
+
+<<<<<<< Updated upstream
+export const sequelize = new Sequelize('bd_gestiontours', 'root', 'root', {
+=======
+
+export const sequelize = new Sequelize('bd_gestiontours', 'root', '', {
+=======
 
 import {descripcion_tour_model} from '../Models/Tour_DescripcionBD';
 
 
 export const sequelize = new Sequelize('bd_gestiontours', 'root', 'root', {
+>>>>>>> master
+>>>>>>> Stashed changes
     host: 'localhost',
     dialect: 'mysql',
     logging: console.log,
@@ -67,8 +92,18 @@ export const Tour_Act = Tour_Actividad_model(sequelize,Sequelize);
 
 export const Itinerario_Tour = itinerario_tour_model(sequelize,Sequelize);
 export const Itinerario_Producto = itinerario_prod_model(sequelize,Sequelize);
+<<<<<<< Updated upstream
 
 export const DescripcionTour = descripcion_tour_model(sequelize,Sequelize);
+=======
+<<<<<<< HEAD
+export const DescripcionTour = descripcion_tour_model(sequelize,Sequelize);
+
+=======
+
+export const DescripcionTour = descripcion_tour_model(sequelize,Sequelize);
+>>>>>>> master
+>>>>>>> Stashed changes
 
 
 // ---15 set 2019---agregando descripciones---/
@@ -135,6 +170,28 @@ Tour_producto.belongsTo(Producto,{foreignKey:'prod_id'});
 
 //----------------------------14 set 2019----------------------------//
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+
+
+//Pensaba que se podia trabajr con una soa tabla de descripcion
+/*Itinerario.hasMany(Descripcion,{foreignKey:'iti_id'});
+Descripcion.belongsTo(Itinerario,{foreignKey:'iti_id'});
+
+Incluye.hasMany(Descripcion,{foreignKey:'incluye_id'});
+Descripcion.belongsTo(Incluye,{foreignKey:'incluye_id'});
+
+NoIncluye.hasMany(Descripcion,{foreignKey:'noIncluye_id'});
+Descripcion.belongsTo(NoIncluye,{foreignKey:'noIncluye_id'});
+
+Notas.hasMany(Descripcion,{foreignKey:'notas_id'});
+Descripcion.belongsTo(Notas,{foreignKey:'notas_id'});*/
+
+=======
+>>>>>>> master
+>>>>>>> Stashed changes
 Tour.hasMany(Tour_Act,{foreignKey:'tour_id'})
 Tour_Act.belongsTo(Tour,{foreignKey:'tour_id'})
 
@@ -151,12 +208,43 @@ Prod_Act.belongsTo(Actividad,{foreignKey:'act_id'})
 Producto.hasMany(Itinerario_Producto,{foreignKey:'prod_id'})
 Itinerario_Producto.belongsTo(Producto,{foreignKey:'prod_id'})
 
+<<<<<<< Updated upstream
 Tour.hasMany(Itinerario_Tour,{foreignKey:'tour_id'});
 Itinerario_Tour.belongsTo(Tour,{foreignKey:'tour_id'});
 //El tour tambin tiene una provincia
 Provincia.hasMany(Producto,{foreignKey:'prov_id'});
 Producto.belongsTo(Provincia,{foreignKey:'prov_id'});
 
+=======
+<<<<<<< HEAD
+Tour.hasMany(Itinerario_Tour,{foreignKey:'tour_id'})
+Itinerario_Tour.belongsTo(Tour,{foreignKey:'tour_id'})
+
+//________alex__descripcion
+Producto.hasMany(Descripcion,{foreignKey:'prod_id'});
+Descripcion.belongsTo(Producto,{foreignKey:'prod_id'});
+/* Descripcion tOUR , Tour */
+
+
+
+
+
+
+Provincia.hasMany(Producto,{foreignKey:'prov_id'});
+Producto.belongsTo(Provincia,{foreignKey:'prov_id'});
+
+
+
+ 
+=======
+Tour.hasMany(Itinerario_Tour,{foreignKey:'tour_id'});
+Itinerario_Tour.belongsTo(Tour,{foreignKey:'tour_id'});
+//El tour tambin tiene una provincia
+Provincia.hasMany(Producto,{foreignKey:'prov_id'});
+Producto.belongsTo(Provincia,{foreignKey:'prov_id'});
+
+>>>>>>> master
+>>>>>>> Stashed changes
 /* Descripcion , Producto  */
 Producto.hasMany(Descripcion,{foreignKey:'prod_id'});
 Descripcion.belongsTo(Producto,{foreignKey:'prod_id'});
@@ -166,10 +254,19 @@ Tour.hasMany(DescripcionTour,{foreignKey:'tour_id'});
 DescripcionTour.belongsTo(Tour,{foreignKey:'tour_id'});
 
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
  
 
 
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> master
+>>>>>>> Stashed changes
 
 
 
