@@ -33,6 +33,7 @@ Tour_Ruta.post('/tourAndProducto/:p_tour_id/:p_prod_id',Tours.TourAddProducto);
 /* Filtros Mysql : */
 
 Tour_Ruta.get('/listTour',Tours.ListadoTourForCity);
+
  
 
 

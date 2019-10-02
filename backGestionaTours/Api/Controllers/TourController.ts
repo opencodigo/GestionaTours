@@ -7,13 +7,14 @@ var multer = require('multer');
 
 
 export let RegistrarTour  = (req:any,res:Response) =>{
-    var DIR = './Api/ImgTour';
+    //var DIR = './Api/ImgTour';
+    var DIR = '../gestionatours/src/assets/ImgTour';
     var storage = multer.diskStorage({
         destination(req:Request,file:any,cb:any){
             cb(null,DIR);
         },
         filename(req:Request,file:any,cb:any){
-            cb(null,file.originalname);
+            cb(null,Date.now()+'-' +file.originalname);
         }
     });
     var upload = multer({
@@ -252,7 +253,15 @@ export let TourUpdateProducto = (req:Request,res:Response)=>{
 /* AQUI MOSTRAREMOS LOS FILTRO DE LA BASE DE DATOS */
 
 export let ListadoTourForCity = (req:Request,res:Response)=>{
-    Tour.findAll().then((rpta: any) => {
+    Tour.findAll({
+        where:{
+            tour_id:{
+                [query.lte]:4
+            }
+        }
+    }).then((rpta: any) => {
         res.json(rpta);
+    }).catch((eeror:any)=>{
+        res.json(eeror);
     });
-}
+};
