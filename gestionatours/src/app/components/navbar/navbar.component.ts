@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
-import { Router } from '@angular/router';
 
 
 
@@ -14,8 +13,7 @@ export class NavbarComponent implements OnInit {
   private user: SocialUser;
   private loggedIn: boolean;
 
-  constructor(private authService: AuthService,
-              private _sRouter:Router) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
@@ -28,14 +26,5 @@ export class NavbarComponent implements OnInit {
   signOut(): void {
     this.authService.signOut();
   }
-<<<<<<< HEAD
-
-  TourxDep(){ //byJorge
-    console.log('se hio click en busque da x dep y -....')
-    this._sRouter.navigate(['/tourxdep'] )
-  }
-  
-=======
->>>>>>> master
 
 }
