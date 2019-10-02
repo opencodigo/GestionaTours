@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ToursComponent } from './components/tours/tours.component';
 import { TourComponent } from './components/tour/tour.component';
+
 import { ProductoComponent } from './components/producto/producto.component';
 import { ToursxdepComponent } from './components/toursxdep/toursxdep.component';
 
@@ -21,7 +20,7 @@ const APP_ROUTES: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(APP_ROUTES)],
-=======
+
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
@@ -33,36 +32,45 @@ import { PagarproductoComponent } from "./components/pagarproducto/pagarproducto
 import { FacturaComponent } from "./components/factura/factura.component";
 import { ProductoComponent } from "./components/producto/producto.component";
 
+import { AdminComponent } from './administrador/components/admin/admin.component';
+import { HomeAdminComponent } from './administrador/components/home-admin/home-admin.component';
+
 const APP_ROUTES: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full" },
-  { path: "tours", component: ToursComponent },
-  { path: "tour", component: ProductoComponent },
-  { path: "reservar", component: PagarproductoComponent },
-  { path: "facturar", component: FacturaComponent },
-  { path: "**", component: HomeComponent },
+
+  { path: '', redirectTo:'/home', pathMatch: 'full' },
+  { path: 'tours', component: ToursComponent },
+  { path: 'tour', component: TourComponent },
+
+  { path: '**', component: HomeComponent },
+
+
   
-  // { path: 'admin', component: AdminComponent },
+  { path: '**', component: HomeComponent },
   {
-    path: "admin",
+    path: 'admin',
     component: AdminComponent,
     children: [
-      { path: "admin", loadChildren: './administrador/admin.module#AdminModule' },
       {
-        path: "admin",
-        redirectTo: "/admin",
-        pathMatch: "full"
-      },
-      {
-        path: "registro",
+        path: 'home',
         component: HomeAdminComponent
-      }
+    },
+    {
+        path: 'registro',
+        component: HomeAdminComponent
+    },
+        
     ]
-  }
+}
+
 ];
 
 @NgModule({
+
   imports: [RouterModule.forRoot(APP_ROUTES /* ,{useHash:true} */)],
->>>>>>> master
+
+=======
+  imports: [RouterModule.forRoot(APP_ROUTES/* ,{useHash:true} */)],
+
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

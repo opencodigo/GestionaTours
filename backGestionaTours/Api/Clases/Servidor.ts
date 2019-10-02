@@ -6,12 +6,19 @@ import bodyParser = require('body-parser');
 import {sequelize} from './../Config/ConexionSequelize';
 
 import { BusquedaTotal_Router } from '../Routes/busqueda';
+
+
+import { BusquedaTotal_Router } from '../Routes/busqueda';
 import { Tour_router } from '../Routes/Tour';
 import { Producto_router } from '../Routes/Producto';
 import { Provin_Router } from '../Routes/provincia';
 import { ByDep_Router } from '../Routes/busquedaByDep';
 
 
+/* Rutas Productos */
+import {Producto_ruta} from '../Routes/ProductoRuta';
+/* Ruta Tour */
+import {Tour_Ruta} from '../Routes/TourRuta';
 
 export class Servidor {
     public app: express.Application;
@@ -48,14 +55,27 @@ export class Servidor {
         this.app.get('/', (req: Request, res: Response) => {
             res.status(200).send("servidor Okey!!");
         });
+
         this.app.use(Tour_router);
         this.app.use(BusquedaTotal_Router);
         this.app.use(Producto_router);
         this.app.use(Provin_Router);
         this.app.use(ByDep_Router);
 
-     
-         
+        this.app.use(BusquedaTotal_Router);
+
+        this.app.use(Tour_router);
+        this.app.use(BusquedaTotal_Router);
+        this.app.use(Producto_router);
+        this.app.use(Provin_Router);
+        this.app.use(ByDep_Router);
+
+        this.app.use(BusquedaTotal_Router);
+
+     /* Rutas Producto */
+        this.app.use(Producto_ruta);
+     /* Ruta Tour */
+        this.app.use(Tour_Ruta);
 
     }
     /* ************************************************************************************* */
