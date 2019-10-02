@@ -15,14 +15,14 @@ const APP_ROUTES: Routes = [
   { path: "tour", component: ProductoComponent },
   { path: "reservar", component: PagarproductoComponent },
   { path: "facturar", component: FacturaComponent },
-  { path: "admin", loadChildren: './administrador/admin.module#AdminModule' },
   { path: "**", component: HomeComponent },
-
+  
   // { path: 'admin', component: AdminComponent },
   {
     path: "admin",
     component: AdminComponent,
     children: [
+      { path: "admin", loadChildren: './administrador/admin.module#AdminModule' },
       {
         path: "admin",
         redirectTo: "/admin",
