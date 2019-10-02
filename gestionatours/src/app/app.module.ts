@@ -30,6 +30,7 @@ import { BusquedaverticalComponent } from './components/busquedavertical/busqued
 import { PagarproductoComponent } from './components/pagarproducto/pagarproducto.component';
 import { AdminComponent } from './administrador/components/admin/admin.component';
 import { HomeAdminComponent } from './administrador/components/home-admin/home-admin.component';
+import { FacturaComponent } from './components/factura/factura.component';
 
 
 let config = new AuthServiceConfig([
@@ -67,7 +68,8 @@ export function provideConfig() {
     BusquedaverticalComponent,
     PagarproductoComponent,
     AdminComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    FacturaComponent
   ],
   imports: [
     BrowserModule,
