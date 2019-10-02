@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { DatoBusqueda } from 'src/app/modelos/datosBusqueda';
 import { TourService } from 'src/app/services/tour.service';
 import { Router } from '@angular/router';
 import { ProvinciasService } from 'src/app/services/provincias.service';
+=======
+>>>>>>> master
 
 @Component({
   selector: 'app-busquedavertical',
@@ -10,6 +13,7 @@ import { ProvinciasService } from 'src/app/services/provincias.service';
   styleUrls: ['./busquedavertical.component.css']
 })
 export class BusquedaverticalComponent implements OnInit {
+<<<<<<< HEAD
   provincias;
   resultsVer;
   datoBuscar:DatoBusqueda = {
@@ -46,6 +50,12 @@ export class BusquedaverticalComponent implements OnInit {
     // this._sTourService.pasarelaSet(this.datoBuscarr);
     
     
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> master
   }
 
 }

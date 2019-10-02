@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { TourService } from 'src/app/services/tour.service';
 import { ActivatedRoute } from '@angular/router';
+=======
+>>>>>>> master
 
 @Component({
   selector: 'app-producto',
@@ -8,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./producto.component.css']
 })
 export class ProductoComponent implements OnInit {
+<<<<<<< HEAD
   rpta = {
     actividades: "",
     capacidad: 0,
@@ -42,6 +46,12 @@ export class ProductoComponent implements OnInit {
 
     })
 
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> master
   }
 
 }

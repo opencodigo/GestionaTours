@@ -28,11 +28,14 @@ export class NavbarComponent implements OnInit {
   signOut(): void {
     this.authService.signOut();
   }
+<<<<<<< HEAD
 
   TourxDep(){ //byJorge
     console.log('se hio click en busque da x dep y -....')
     this._sRouter.navigate(['/tourxdep'] )
   }
   
+=======
+>>>>>>> master
 
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { DatoBusqueda } from 'src/app/modelos/datosBusqueda';
 import { TourService } from 'src/app/services/tour.service';
+=======
+>>>>>>> master
 
 @Component({
   selector: 'app-tours',
@@ -8,6 +11,7 @@ import { TourService } from 'src/app/services/tour.service';
   styleUrls: ['./tours.component.css']
 })
 export class ToursComponent implements OnInit {
+<<<<<<< HEAD
   a_buscar:DatoBusqueda = {
     provID:0,
     fechin:'',
@@ -41,4 +45,12 @@ export class ToursComponent implements OnInit {
       
       
 
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> master
 }
