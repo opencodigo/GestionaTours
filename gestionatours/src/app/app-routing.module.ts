@@ -16,7 +16,26 @@ const APP_ROUTES: Routes = [
   { path: 'factura', component: FacturaComponent },
   { path: '**', component: HomeComponent },
   
+<<<<<<< HEAD
   
+=======
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      {
+        path: 'home',
+        component: HomeAdminComponent
+    },
+    {
+        path: 'registro',
+        component: HomeAdminComponent
+    },
+        
+    ]
+}
+
+>>>>>>> abe19d2883fb0b4a553b43ba7377377e9c6e8d7d
 ];
 
 @NgModule({
