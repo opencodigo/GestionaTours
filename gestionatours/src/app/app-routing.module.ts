@@ -24,7 +24,7 @@ const APP_ROUTES: Routes = [
     component: AdminComponent,
     children: [
       {
-        path: 'home',
+        path: 'admin',
         component: HomeAdminComponent
     },
     {
