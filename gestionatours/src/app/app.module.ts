@@ -28,8 +28,6 @@ import { TourComponent } from './components/tour/tour.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { BusquedaverticalComponent } from './components/busquedavertical/busquedavertical.component';
 import { PagarproductoComponent } from './components/pagarproducto/pagarproducto.component';
-import { AdminComponent } from './administrador/components/admin/admin.component';
-import { HomeAdminComponent } from './administrador/components/home-admin/home-admin.component';
 import { FacturaComponent } from './components/factura/factura.component';
 
 
@@ -67,9 +65,7 @@ export function provideConfig() {
     ProductoComponent,
     BusquedaverticalComponent,
     PagarproductoComponent,
-    AdminComponent,
-    HomeAdminComponent,
-    FacturaComponent
+    FacturaComponent,
   ],
   imports: [
     BrowserModule,
