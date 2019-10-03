@@ -1,63 +1,3 @@
-<<<<<<< HEAD
-
-<form  #busquedaForm="ngForm" (ngSubmit)="GobusquedafromVertical(busquedaForm)" >
-
-<div class="col-md-12 bg-dark p-4">
-
-    <div class="form-group">
-     
-        <label class="control-label" for="inputDestino">Destino</label>
-        <select 
-       
-        name="provID" 
-        id="inputDestino" 
-        [(ngModel)]='prov_id' 
-        class="form-control" 
-           > 
-
-          <option value="0">Seleccione...</option>
-          <option [value]="provincia.prov_id" *ngFor="let provincia of provincias" > {{provincia.prov_nom}} </option>
-        </select>
-
-    </div>
-
-
-    <div class="form-group">
-         
-        <label class="control-label" for="inputFechaI">Fecha inicio</label>
-        <input 
-              type="datetime-local" 
-              class="form-control"
-              name="fechin"
-              #fechin="ngModel"
-              [(ngModel)]="datoBuscar.fechin" 
-              id="inputFechaI">
-  
-    </div>
-
-
-    <div class="form-group">
-        <fieldset>
-          <label class="control-label" for="inputFechaF">Fecha fin</label>
-          <input type="datetime-local" 
-                  class="form-control"
-                  name="fechfin"
-                  #fechfin="ngModel"
-                  [(ngModel)]="datoBuscar.fechfin" 
-                  id="inputFechaF">
-        </fieldset>
-      </div>
-
-  <div class="form-group">
-      <button type="submit" class="btn btn-primary">BUSCAR</button>
-  </div>
-
-</div>
-
-
-
-</form>
-=======
 <div class="col-md-12 bg-dark p-4">
   <div class="form-group">
     <fieldset>
@@ -78,7 +18,6 @@
     </fieldset>
   </div>
   <div class="form-group">
-    <button [routerLink]="['/tour']" type="button" class="btn btn-primary">BUSCAR</button>
+    <button [routerLink]="['/tours']" type="button" class="btn btn-primary">BUSCAR</button>
   </div>
 </div>
->>>>>>> master
