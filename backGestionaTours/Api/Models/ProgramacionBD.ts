@@ -21,16 +21,10 @@ export let programacion_model = (sequelize:any,type:any)=>{
         prog_cap:{
             type:type.INTEGER,
             allowNull:false
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
         },
         prog_dura:{
             type:type.STRING(20),
             allowNull:false
-=======
->>>>>>> master
->>>>>>> Stashed changes
         }
     },{
         tableName:'t_programacion',
