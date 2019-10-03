@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -31,6 +32,8 @@ import { PagarproductoComponent } from './components/pagarproducto/pagarproducto
 import { AdminComponent } from './administrador/components/admin/admin.component';
 import { HomeAdminComponent } from './administrador/components/home-admin/home-admin.component';
 import { FacturaComponent } from './components/factura/factura.component';
+
+import { ServiceTurismoService } from './servicesAlex/service-turismo.service';
 
 
 let config = new AuthServiceConfig([
@@ -74,12 +77,13 @@ export function provideConfig() {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpClientModule
   ],
   providers: [{
     provide: AuthServiceConfig,
-    useFactory: provideConfig
-  }],
+    useFactory: provideConfig,
+  },ServiceTurismoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
