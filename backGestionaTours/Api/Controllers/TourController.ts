@@ -8,7 +8,7 @@ var multer = require('multer');
 
 export let RegistrarTour  = (req:any,res:Response) =>{
     //var DIR = './Api/ImgTour';
-    var DIR = '../gestionatours/src/assets/ImgTour';
+    var DIR = '../dashboard-master/src/assets/ImgTour';
     var storage = multer.diskStorage({
         destination(req:Request,file:any,cb:any){
             cb(null,DIR);

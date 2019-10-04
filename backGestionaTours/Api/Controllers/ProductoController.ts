@@ -1,5 +1,5 @@
 import {Request , Response} from 'express';
-import {Producto,Descripcion,Itinerario_Producto,Imagen,Producto_Imagen,Provincia} from './../Config/ConexionSequelize';
+import {Producto,Descripcion,Itinerario_Producto,Imagen,Producto_Imagen,Provincia,sequelize} from './../Config/ConexionSequelize';
 
 const sqlz = require('sequelize');
 const query = sqlz.Op;
@@ -270,3 +270,20 @@ export let listProvincias = (req:Request,res:Response)=>{
         res.json(eeror);
     });
 };
+export let ListadoProducto =  (req:Request,res:Response)=>{
+    
+sequelize.query('select prod.prod_id,prod.prod_nom,prod.prod_prec , prov.prov_nom from bd_gestiontours.t_producto as prod inner join bd_gestiontours.t_provincia as prov where prod.prod_id = prov.prov_id;')
+.then((rpta:any)=>{
+    res.json(rpta[0]);
+}).catch((error:any)=>{
+    res.json(error);
+});
+
+    // Producto.findAll({
+    // }
+    // ).then((rpta:any)=>{
+    //     res.json(rpta);
+    // }).catch((error:any)=>{
+    //     res.json(error);
+    // });
+}

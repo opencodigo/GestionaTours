@@ -13,11 +13,14 @@ export class ServiceProductoService {
   getListProvincias(){
     return this._sProducto.get(`${this.URL}provincias`);
   };
-  getListTour(){
-    
+  getListProducto(){
+    return this._sProducto.get(`${this.URL}ListProducto`);
   }
   postAddProducto(Producto:Producto){
     return this._sProducto.post(`${this.URL}productoRegistro`,Producto)
+  };
+  postDeleteProducto(prod_id:number){
+    return this._sProducto.delete(`${this.URL}productoDelete/${prod_id}`);
   };
 
 }

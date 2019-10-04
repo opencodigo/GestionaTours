@@ -31,6 +31,11 @@ export class ProductoAddComponent implements OnInit {
       },error=>{console.log(error);
       }
     );
+    this._sProductoService.getListProducto().subscribe(res=>{
+      console.log(res);
+      
+    },error=>{console.log(error);
+    });
   };
   SaveProducto(prov_id:number){
     console.log(prov_id);

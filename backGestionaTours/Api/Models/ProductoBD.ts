@@ -14,12 +14,7 @@ export let producto_model = (sequelize:any,type:any)=>{
         prod_prec:{
             type:type.DECIMAL(10,2),
             allowNull:true
-        },
-        prod_puntos:{
-            type:type.DECIMAL(10,2),
-
-            allowNull:true
-        }   
+        }, 
     },{
         tableName:'t_producto',
         timestamps:false

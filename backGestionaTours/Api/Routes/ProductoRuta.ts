@@ -9,7 +9,7 @@ export let Producto_ruta = Router();
  */
 /* 1- */ Producto_ruta.post('/productoRegistro',Product.RegistrarProducto);
 /* 2- */ Producto_ruta.put('/productoUpdate/:p_prod_id',Product.ActualizarProducto);
-/* 3- */ Producto_ruta.post('/productoDelete/:p_prod_id',Product.EliminarProducto);
+/* 3- */ Producto_ruta.delete('/productoDelete/:p_prod_id',Product.EliminarProducto);
  /* Crud de Descripcion Producto:
     1- Insertar Descripcion Producto.
     2- Actualizar Descripcion Producto.
@@ -34,4 +34,5 @@ export let Producto_ruta = Router();
 /* 2- */ Producto_ruta.post('/ProductoRelacionado/:p_prod_id/:p_img_id',Product.AddImageForProducto);
 
 Producto_ruta.get('/provincias',Product.listProvincias);
+Producto_ruta.get('/ListProducto',Product.ListadoProducto);
 

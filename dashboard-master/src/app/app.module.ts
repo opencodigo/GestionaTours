@@ -27,6 +27,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 import {HttpClientModule} from '@angular/common/http';
 import { ServiceProductoService } from './Services/service-producto.service';
+import {ServiceTourService} from './Services/service-tour.service';
 
  @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { ServiceProductoService } from './Services/service-producto.service';
 
   ],
   providers: [
-    ServiceProductoService
+    ServiceProductoService,
+    ServiceTourService
   ],
   bootstrap: [AppComponent]
 })
