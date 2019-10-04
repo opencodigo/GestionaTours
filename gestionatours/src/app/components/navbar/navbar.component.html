@@ -25,8 +25,7 @@
             aria-haspopup="true"
             aria-expanded="false"
             routerLinkActive="active"
-            *ngIf="user"
-          >
+            *ngIf="user">
             {{ user.name }}
           </button>
           <div class="dropdown-menu">
@@ -44,9 +43,9 @@
           </div>
         </div>
       </div>
-      <app-login></app-login> |
-      <a class="nav-item nav-link text-light">Registrarse</a> |
-      <a class="nav-item nav-link text-light">English</a>
+      <app-login></app-login> 
+      <a class="nav-item nav-link text-light btn-primary">Registrarse</a>
+      <a class="nav-item nav-link text-light btn-primary">English</a>
     </div>
   </div>
 </nav>

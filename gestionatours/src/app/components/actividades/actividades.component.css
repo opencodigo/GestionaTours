@@ -1,25 +1,30 @@
-.portfolio-item{
-	/* background-color: #fff; */
-    /*border: 1px solid #ccc;*/
-    background-image: url(./../../../assets/img/actividad-canotaje.jpg);
-    height: 200px;
+.tourciudades{
+    height: 100%;
     width: 100%;
-	padding: 10px;
-    border-radius: 5px;
-    
+    padding: 2em;
+}
+.ciudad{
+    padding: 2em; 
 }
 
+.fotociudad {
+    height: 100%; 
+    display: block;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
 
-/* .portfolio-item img{
-	-webkit-transition: all 0.6s ease; 
+  
+.fotociudad:hover {
+    -webkit-transform:scale(1.01); 
+     transform:scale(1.01);
+     -webkit-transition: all 0.6s ease; 
     -moz-transition: all 0.6s ease; 
     -ms-transition: all 0.6s ease; 
     -o-transition: all 0.6s ease; 
     transition: all 0.6s ease;
-} */
-
-
-.portfolio-item:hover {
-    -webkit-transform:scale(1.01); 
-     transform:scale(1.01);
+    cursor: pointer;
 }
