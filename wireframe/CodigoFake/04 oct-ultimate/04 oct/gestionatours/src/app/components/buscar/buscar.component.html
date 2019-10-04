@@ -1,0 +1,64 @@
+<form #busquedaForm="ngForm" (ngSubmit)="Gobusqueda(busquedaForm)">   
+
+  <div class="container my-5 busqueda bg-dark py-4" >
+   <div class="row">
+     
+     <div class="col-md-3 pl-4">
+       <div class="form-group">
+     
+           <label class="control-label" for="inputDestino">Destino</label>
+           <select 
+           name="provID" 
+           id="inputDestino" 
+           [(ngModel)]='prov_id' 
+           class="form-control" 
+              > 
+ 
+             <option value="0">Seleccione...</option>
+             <option [value]="provincia.prov_id" *ngFor="let provincia of provincias" > {{provincia.prov_nom}} </option>
+           </select>
+
+
+
+       </div>
+     </div>
+
+     <div class="col-md-2">
+       <div class="form-group">
+         
+           <label class="control-label" for="inputFechaI">Fecha inicio</label>
+           <input 
+                 type="datetime-local" 
+                 class="form-control"
+                 name="fechin"
+                 #fechin="ngModel"
+                 [(ngModel)]="datoBuscar.fechin" 
+                 id="inputFechaI">
+     
+       </div>
+     </div>
+
+     <div class="col-md-2">
+       <div class="form-group">
+         <fieldset>
+           <label class="control-label" for="inputFechaF">Fecha fin</label>
+           <input type="datetime-local" 
+                   class="form-control"
+                   name="fechfin"
+                   #fechfin="ngModel"
+                   [(ngModel)]="datoBuscar.fechfin" 
+                   id="inputFechaF">
+         </fieldset>
+       </div>
+     </div>
+     
+
+
+     <div class="col-md-2">
+       
+         <button type="submit" class="btn btn-primary">BUSCAR</button>
+     
+     </div>
+   </div>
+ </div>
+</form>
