@@ -8,6 +8,8 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { TourAddComponent } from 'app/tour-add/tour-add.component';
+import { ProductoAddComponent } from 'app/producto-add/producto-add.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -54,7 +56,9 @@ export const AdminLayoutRoutes: Routes = [
     // }
     { path: 'principal',      component: DashboardComponent },
     { path: 'usuario',   component: UserProfileComponent },
+    { path:'AddProducto', component:ProductoAddComponent},
     { path: 'producto',     component: TableListComponent },
+    { path: 'AddTour', component:TourAddComponent},
     { path: 'tour',     component: TypographyComponent },
     { path: 'reserva',          component: IconsComponent },
     { path: 'factura',           component: MapsComponent },

@@ -20,6 +20,8 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material';
+import { TourAddComponent } from 'app/tour-add/tour-add.component';
+import { ProductoAddComponent } from 'app/producto-add/producto-add.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -42,6 +44,8 @@ import {
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    TourAddComponent,
+    ProductoAddComponent
   ]
 })
 

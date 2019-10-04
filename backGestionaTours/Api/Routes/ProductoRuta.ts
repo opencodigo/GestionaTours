@@ -33,3 +33,5 @@ export let Producto_ruta = Router();
 /* 1- */ Producto_ruta.post('/ProductoImagen',Product.SubirImagenProducto);
 /* 2- */ Producto_ruta.post('/ProductoRelacionado/:p_prod_id/:p_img_id',Product.AddImageForProducto);
 
+Producto_ruta.get('/provincias',Product.listProvincias);
+

@@ -1,5 +1,5 @@
 import {Request , Response} from 'express';
-import {Producto,Descripcion,Itinerario_Producto,Imagen,Producto_Imagen} from './../Config/ConexionSequelize';
+import {Producto,Descripcion,Itinerario_Producto,Imagen,Producto_Imagen,Provincia} from './../Config/ConexionSequelize';
 
 const sqlz = require('sequelize');
 const query = sqlz.Op;
@@ -262,4 +262,11 @@ export let AddImageForProducto = (req:Request,res:Response)=>{
 };
 export let UpdateImageForProducto = (req:Request,res:Response)=>{
     /** Pendiente */
+};
+export let listProvincias = (req:Request,res:Response)=>{
+    Provincia.findAll().then((rpta: any) => {
+        res.json(rpta);
+    }).catch((eeror:any)=>{
+        res.json(eeror);
+    });
 };

@@ -22,8 +22,13 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+//import { ProductoAddComponent } from './producto-add/producto-add.component';
+//import { TourAddComponent } from './tour-add/tour-add.component';
 
-@NgModule({
+import {HttpClientModule} from '@angular/common/http';
+import { ServiceProductoService } from './Services/service-producto.service';
+
+ @NgModule({
   imports: [
     BrowserAnimationsModule,
     FormsModule,
@@ -32,6 +37,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -39,9 +45,13 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    //ProductoAddComponent,
+    //TourAddComponent,
 
   ],
-  providers: [],
+  providers: [
+    ServiceProductoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
