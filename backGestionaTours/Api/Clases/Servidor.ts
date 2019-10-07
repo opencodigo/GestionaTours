@@ -58,7 +58,8 @@ export class Servidor {
 
             sequelize.authenticate().then(() => {
                     console.log('Connection has been established successfully.');
-                    sequelize.sync({force:false}).then(()=>{
+                    sequelize.sync({force:false
+                    }).then(()=>{
                         console.log("BD Creada con exito");
                         
                     }).catch((error:any)=>{

@@ -37,5 +37,9 @@ export class TableListComponent implements OnInit {
     this._sProductoService.postDeleteProducto(prod_id).subscribe(res=>{this.getProducto(); console.log(res);
     },error=>{console.log(error);
     });
+  };
+  UpdateDate(prod_id){
+    console.log(prod_id);
+    
   }
 }

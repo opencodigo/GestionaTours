@@ -287,3 +287,4 @@ sequelize.query('select prod.prod_id,prod.prod_nom,prod.prod_prec , prov.prov_no
     //     res.json(error);
     // });
 }
+/** COMIT */

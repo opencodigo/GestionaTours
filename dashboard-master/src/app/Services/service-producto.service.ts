@@ -22,5 +22,8 @@ export class ServiceProductoService {
   postDeleteProducto(prod_id:number){
     return this._sProducto.delete(`${this.URL}productoDelete/${prod_id}`);
   };
+  putUpdateProducto(prod_id:number,Producto:Producto){
+    return this._sProducto.put(`${this.URL}/productoUpdate/${prod_id}`,Producto);
+  };
 
 }
